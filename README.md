@@ -29,4 +29,4 @@ _add even more supported browsers to this list_
 
 ## Credits and thanks
 
-Truckloads of thanks to [Jonathan van Wunnik](https://github.com/jolantis), colleague at [Studio Dumbar]:(http://studiodumbar.com) who did a lot of curating on all the SCSS objects.
+Truckloads of thanks to [Jonathan van Wunnik](https://github.com/jolantis), colleague at [Studio Dumbar](http://studiodumbar.com) who did a lot of curating on all the SCSS objects.
