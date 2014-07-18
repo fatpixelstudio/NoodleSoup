@@ -24,7 +24,7 @@ endif;
 <head>
 	<meta charset="utf-8" />
 
-	<title>Fat kit &mdash; Front-end starter kit by Fat Pixel</title>
+	<title>Stout kit &mdash; Front-end starter kit by Fat Pixel</title>
 	<meta name="description" content="" />
 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
