@@ -1,0 +1,33 @@
+// --------------------------------------------------------------------------
+// Typography
+// --------------------------------------------------------------------------
+
+// Stacks
+// --------------------------------------------------------------------------
+
+$sans-font:                     "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
+$serif-font:                    "Lucida Bright", "LucidaBright", Georgia, serif;
+$mono-font:                     Monaco, "Courier New", "CourierNewPSMT", Courier, monospace, serif;
+$heading-font:                  "Helvetica Neue Condensed Bold", "HelveticaNeue-CondensedBold", "Arial Narrow Bold", "ArialNarrow-Bold", "Arial Narrow", "ArialNarrow", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+$icon-font:                     "Fontello";
+
+// Base
+// --------------------------------------------------------------------------
+
+$base-font-size:                16px;
+$base-line-height:              1.5;
+$base-font-percentages: (
+	small                       88%,                                            // <= mobile
+	compact                     94%,                                            // <= tablet portrait
+	medium                      100%,                                           // <= base/default (dektop/tablet landscape)
+	large                       106%,
+	wide                        113%,
+	huge                        125%
+);
+
+// Max width
+// --------------------------------------------------------------------------
+
+$copy-max-width:                40em;
+$heading-max-width:             $copy-max-width;
+

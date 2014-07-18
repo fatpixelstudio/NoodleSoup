@@ -1,0 +1,35 @@
+{
+  "name": "FatKit",
+  "description": "Front-end starter kit by Fat Pixel.",
+  "version": "0.0.1",
+  "url": "http://www.fatpixel.nl/fatkit",
+  "author": "Marijn Tijhuis <post@fatpixel.nl>",
+  "copyright": "Fat Pixel Studio",
+  "license": "http://www.opensource.org/licenses/mit-license.php MIT License",
+  "repository": {
+    "type": "git",
+    "url": "https://fatpixelstudio.github.com/fatkit.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-autoprefixer": "^0.8.2",
+    "grunt-bump": "^0.0.13",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-csso": "^0.6.1",
+    "grunt-grunticon": "^1.2.5",
+    "grunt-hashify": "^0.0.7",
+    "grunt-imageoptim": "^1.4.1",
+    "grunt-notify": "^0.2.20",
+    "grunt-pixrem": "^0.1.2",
+    "grunt-sass": "^0.14.0",
+    "grunt-stripmq": "^0.0.4",
+    "grunt-svgmin": "^0.4.0",
+    "jshint-stylish": "^0.1.5"
+  }
+}

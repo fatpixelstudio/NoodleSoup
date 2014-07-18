@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Page
+   ========================================================================== */
+
+/**
+ * High-, page-level styling (no `copy` scope)
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from variables. The `font-size` is calculated to exist
+ *    in %, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ * 4. Font-size is set to 100% for browsers that don't cut the
+ *    mustard (aka `no-ctm`).
+ */
+
+html {
+	overflow-y: auto; /* [2] */
+	min-height: 100%; /* [3] */
+	background-color: $background-color;
+	color: $color-base-black;
+	font-family: $sans-font;
+	font-size: 100%; /* [4] */
+	line-height: $base-line-height;
+}

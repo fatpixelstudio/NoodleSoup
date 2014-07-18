@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Container
+   ========================================================================== */
+
+/**
+ * Container (contain padding => max width)
+ */
+
+.Container {
+	padding-right: $contain-percentage;
+	padding-left: $contain-percentage;
+}

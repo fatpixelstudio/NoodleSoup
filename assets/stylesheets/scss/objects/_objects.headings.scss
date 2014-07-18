@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Headings
+   ========================================================================== */
+
+/**
+ * Shared heading settings
+ */
+
+%u-headingSettings {
+	max-width: $heading-max-width;
+	letter-spacing: .01em;
+	font-size: 300;
+}
+
+/**
+ * Heading sizes
+ */
+
+// .TeraHeading {}
+// .GigaHeading {}
+// .MegaHeading {}
+
+/* Alpha */
+
+.AlphaHeading {
+	@extend %u-headingSettings;
+	font-size: rhythm(3);
+}
+
+/* Beta */
+
+.BetaHeading {
+	@extend %u-headingSettings;
+	font-size: rhythm(2);
+}
+
+/* Gamma */
+
+.GammaHeading {
+	@extend %u-headingSettings;
+	font-size: rhythm(1);
+}
+
+.DeltaHeading {
+	@extend %u-headingSettings;
+	font-size: rhythm(1);
+	font-weight: 600;
+}
+
+.EpsilonHeading,
+.ZetaHeading {
+	@extend %u-headingSettings;
+	font-size: rhythm(1);
+	font-weight: 300;
+	text-transform: uppercase;
+}
