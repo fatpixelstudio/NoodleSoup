@@ -29,7 +29,7 @@ endif;
 <head>
 	<meta charset="utf-8" />
 
-	<title>Stout kit &mdash; Front-end starter kit by Fat Pixel</title>
+	<title>Noodle Soup &mdash; Front-end starter kit by Fat Pixel</title>
 	<meta name="description" content="" />
 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -60,7 +60,7 @@ endif;
 	<![endif]-->
 
 	<header class="Contain">
-		<h1>Stout Kit</h1>
+		<h1>Noodle Soup</h1>
 	</header>
 	<div role="main" class="Contain Copy">
 		<p>A front-end starter kit by Fat Pixel.</p>

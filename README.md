@@ -1,4 +1,4 @@
-# Stout Kit
+# Noodle Soup
 ================
 
 Front-end starter kit by Fat Pixel.
@@ -27,9 +27,9 @@ _add even more supported browsers to this list_
 - <del>Dolphin Browser HD: 8.5+ (voor Android)</del>
 - <del>Dolphin Browser Mini: 2.3+ (voor Android)</del>
 
-## Why 'stout' kit?
+## Why NoodleSoup?
 
-I know. It's a silly name. If you really need to know the reason why such a silly name for a front-end starter kit, here goes. The name of my one-man web studio is Fat Pixel. Stout is just a synonym for 'Fat'. And [stout](http://en.wikipedia.org/wiki/Stout) is also a name for a dark beer which I also enjoy from time to time. So there's that: a silly name.
+I know. It's a silly name. If you really need to know the reason why such a silly name for a front-end starter kit, here goes. The name of my one-man web studio is Fat Pixel. I figured the starter kit should be something dinner related. So because it's a 'starter', let's give it the name of an entree. So there's that: Noodle Soup. A silly name.
 
 ## Credits and thanks
 

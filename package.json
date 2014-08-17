@@ -1,14 +1,14 @@
 {
-  "name": "FatKit",
+  "name": "NoodleSoup",
   "description": "Front-end starter kit by Fat Pixel.",
   "version": "0.0.1",
-  "url": "http://www.fatpixel.nl/fatkit",
+  "url": "http://www.fatpixel.nl/noodlesoup",
   "author": "Marijn Tijhuis <post@fatpixel.nl>",
   "copyright": "Fat Pixel Studio",
   "license": "http://www.opensource.org/licenses/mit-license.php MIT License",
   "repository": {
     "type": "git",
-    "url": "https://fatpixelstudio.github.com/fatkit.git"
+    "url": "https://fatpixelstudio.github.com/NoodleSoup.git"
   },
   "dependencies": {},
   "devDependencies": {
