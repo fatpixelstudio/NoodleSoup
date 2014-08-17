@@ -7,9 +7,10 @@
  */
 
 %u-headingSettings {
+	font-family: $heading-font;
 	max-width: $heading-max-width;
 	letter-spacing: .01em;
-	font-size: 300;
+	font-weight: 300;
 }
 
 /**
