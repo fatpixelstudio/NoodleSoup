@@ -12,11 +12,13 @@ $jsobj = json_decode(file_get_contents($assets_js));
 if(strpos($_SERVER['SERVER_NAME'],'local.') !== false):
 	$env_suffix = 'dev';
 	$main_css = 'main';
+	$oldie_css = 'oldie';
 	$print_css = 'print';
 	$main_js = 'main.scripts';
 else:
 	$env_suffix = 'min';
 	$main_css = $cssobj->main;
+	$oldie_css = $cssobj->oldie;
 	$print_css = $cssobj->print;
 	$main_js = $jsobj->main;
 endif;
@@ -43,6 +45,7 @@ endif;
 	<meta name="msapplication-TileColor" content="#222222">
 
 	<link rel="stylesheet" href="assets/stylesheets/<?php echo $env_suffix . '/' . $main_css . '.' . $env_suffix ?>.css" />
+	<!--[if (lt IE 9)]><link rel="stylesheet" href="/assets/stylesheets/<?php echo $env_suffix . '/' . $oldie_css . '.' . $env_suffix .'.css'; ?>"><![endif]-->
 	<link rel="stylesheet" href="assets/stylesheets/<?php echo $env_suffix . '/' . $print_css . '.' . $env_suffix ?>.css" media="print" />
 
 	<?php /* Using Google Fonts? Uncomment this!
