@@ -65,8 +65,208 @@ endif;
 	<header class="Contain">
 		<h1>Noodle Soup</h1>
 	</header>
-	<div role="main" class="Contain Copy">
-		<p>A front-end starter kit by Fat Pixel.</p>
+	<div role="main" class="Contain">
+
+		<div class="Copy">
+			<p>A front-end starter kit by Fat Pixel.</p>
+
+			<h1>Base</h1>
+
+			<p>This page show basic (typographic) HTML elements and how the scoped <em>.Copy</em> class renders them.</p>
+			<ul>
+				<li><a data-scroll href="#headings">Headings</a></li>
+				<li><a data-scroll href="#widont">Widont</a></li>
+				<li><a data-scroll href="#paragraph">Paragraph</a></li>
+				<li><a data-scroll href="#blockquote">Blockquote</a></li>
+				<li><a data-scroll href="#lists">Lists</a></li>
+				<li><a data-scroll href="#tags">Tags</a></li>
+				<li><a data-scroll href="#table">Table</a></li>
+				<li><a data-scroll href="#buttons">Buttons</a></li>
+				<li><a data-scroll href="#form">Form</a></li>
+			</ul>
+
+			<hr />
+
+			<h2 id="headings">Headings</h2>
+
+			<h1>Heading h1 duis volutpat id metus quis semper</h1>
+
+			<p>Praesent eu leo eget odio fermentum consequat a sit amet mi. Suspendisse sit amet tellus vel odio scelerisque euismod. Vestibulum nisl ligula, commodo sit.</p>
+
+			<h2>Heading h2 duis volutpat id metus quis semper</h2>
+
+			<p>Duis accumsan feugiat eleifend. Morbi in urna nulla. Etiam pretium, ante ultrices euismod euismod, felis velit tempus diam, quis mollis neque enim non purus.</p>
+
+			<h3>Heading 3 duis volutpat id metus quis semper</h3>
+
+			<p>Vivamus at neque at mi vestibulum condimentum sed sit amet arcu. Morbi mauris augue, ultricies eu semper quis, lacinia id quam. Proin.</p>
+
+			<hr />
+
+			<h2 id="paragraph">Paragraph</h2>
+
+			<p>Donec quam felis, ultricies nec, pellentesque eu &#8212; pretium quis, sem. And then Jonathan van Wunnik said, <q class="Quote" lang="en">This is an English inline quote</q>. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. <strong><span class="u-textNoHyphen">These words will not be hyphenated</span></strong>. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+
+			<p>Donec blandit, quam et tempus egestas, nulla enim viverra orci, ac scelerisque massa felis non libero. Praesent eu dui vel arcu consectetur blandit malesuada a augue. In et.</p>
+
+			<hr />
+
+			<h2 id="blockquote">Blockquote</h2>
+
+			<p>Integer elit velit, suscipit sit amet commodo a, semper vel mi. Vestibulum sit amet sem orci. Aliquam imperdiet odio ut lectus adipiscing venenatis ac quis risus. Pellentesque facilisis gravida commodo. Donec non.</p>
+
+			<figure class="Blockquote"><blockquote lang="en"><p>I&#8217;m going to make him an offer he can&#8217;t refuse.</p></blockquote><figcaption>Don Vito Corleone&#8217;s famous line in <cite><a href="http://www.imdb.com/title/tt0068646/" rel="external nofollow">The Godfather</a></cite></figcaption></figure>
+
+			<p>Cras facilisis suscipit porttitor. Aliquam erat volutpat. Integer commodo lacus ac nibh semper eget facilisis est lobortis. Sed dignissim, erat vitae gravida semper, orci metus porttitor mauris, et laoreet odio justo id tortor. Etiam.</p>
+
+			<figure class="Blockquote"><blockquote lang="en"><p>A wise girl kisses but doesn&#8217;t love, listens but doesnt believe, and leaves before she is left.</p></blockquote><figcaption>Marilyn Monroe</figcaption></figure>
+
+			<p>Vivamus at neque at mi vestibulum condimentum sed sit amet arcu. Morbi mauris augue, ultricies eu semper quis, lacinia id quam. Proin.</p>
+
+			<figure class="Blockquote"><blockquote lang="fr"><p>La vie est une maladie mortelle sexuellement transmissible.</p></blockquote><figcaption>Woody Allen</figcaption></figure>
+
+			<p>Donec blandit, quam et tempus egestas, nulla enim viverra orci, ac scelerisque massa felis non libero. Praesent eu dui vel arcu consectetur blandit malesuada a augue. In et.</p>
+
+			<hr />
+
+			<h2 id="lists">Lists</h2>
+
+			<h3>Unordered list</h3>
+
+			<ul>
+				<li>Lorem ipsum dolor sit amet</li>
+				<li>Consectetur adipisicing elit</li>
+				<li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+				<li>Ut enim ad minim veniam</li>
+			</ul>
+
+			<h3>Ordered list</h3>
+
+			<ol>
+				<li>Lorem ipsum dolor sit amet</li>
+				<li>Consectetur adipisicing elit</li>
+				<li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+				<li>Ut enim ad minim veniam</li>
+				<li>Ut enim ad minim veniam</li>
+				<li>Lorem ipsum dolor sit amet</li>
+				<li>Consectetur adipisicing elit</li>
+				<li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+				<li>Ut enim ad minim veniam</li>
+				<li>Ut enim ad minim veniam</li>
+			</ol>
+
+			<h3>Nested list</h3>
+
+			<ul>
+				<li>Consectetur adipisicing elit
+
+					<ul>
+						<li>Pellentesque habitant morbi tristique senectus</li>
+						<li>Sed magna nisl, porta id</li>
+					</ul>
+				</li>
+				<li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+
+					<ul>
+						<li>Praesent nunc urna, suscipit at</li>
+						<li>Cras at magna turpis. Vivamus</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Nested list</h3>
+
+			<ol>
+				<li>Lorem ipsum dolor sit amet
+
+					<ul>
+						<li>Aliquam fringilla massa lacus, at ornare</li>
+						<li>Aliquam facilisis erat vitae metus</li>
+					</ul>
+				</li>
+				<li>Consectetur adipisicing elit
+
+					<ul>
+						<li>Pellentesque habitant morbi tristique senectus</li>
+						<li>Sed magna nisl, porta id</li>
+					</ul>
+				</li>
+			</ol>
+
+			<h3>Definition list</h3>
+
+			<dl>
+				<dt>Apple</dt>
+				<dd>Pomaceous fruit of plants of the genus Malus in the family Rosaceae.</dd>
+
+				<dt>Orange</dt>
+				<dd>The fruit of an evergreen tree of the genus Citrus.</dd>
+
+				<dt>Peer</dt>
+				<dd>The fruit of the genus Pyrus tree.</dd>
+			</dl>
+
+			<h3>Link list</h3>
+
+			<ul>
+				<li><a href="http://500px.com/photo/16161417">Autumn baby</a></li>
+				<li><a href="http://500px.com/photo/16158697">Loving it!</a></li>
+				<li><a href="http://500px.com/photo/16153493">Living statue</a></li>
+				<li><a href="http://500px.com/photo/16153891">An old man</a></li>
+			</ul>
+
+			<hr />
+
+			<h2 id="tags">Tags</h2>
+
+			<p>I am <a href="http://studiodumbar.com">the a tag</a> example<br />
+				I am the <abbr title="abbreviation">abbr</abbr> tag example<br />
+				I am <b>the b tag</b> example<br />
+				I am <cite>the cite tag</cite> example<br />
+				I am <del>the del tag</del> example<br />
+				I am <dfn>the dfn tag</dfn> example<br />
+				I am <em>the em tag</em> example<br />
+				I am <i>the i tag</i> example<br />
+				I am <ins>the ins tag</ins> example<br />
+				I am <mark>the mark tag</mark> example<br />
+				I am <small>the small tag</small> example<br />
+				I am <span>the span tag</span> example<br />
+				I am <strong>the strong tag</strong> example<br />
+				I am <sub>the sub tag</sub> example<br />
+				I am <sup>the sup tag</sup> example<br />
+				I am <var>the var tag</var> example<br />
+				I am <q>the q tag <q>inside</q> a q tag</q> example<br />
+				I am <code>the code tag</code> example<br />
+				I am <kbd>the kbd (or HTML Keyboard Input Element) tag</kbd> example
+			</p>
+
+			<hr />
+
+			<h2 id="buttons" class="BetaHeading">Button</h2>
+
+			<p>
+				<input type="submit" name="submit" value="Submit button" class="Button"/>
+				<input type="button" name="submit" value="Input button" class="Button"/>
+				<button class="Button">Button button</button>
+				<a href="#" class="Button Button--primary" role="button">Anchor button (primary)</a>
+			</p>
+
+			<p><input type="submit" name="submit" value="Submit button" class="Button"/></p>
+			<p><input type="button" name="submit" value="Input button (primary)" class="Button Button--primary"/></p>
+
+			<p><input type="submit" name="submit" value="Small button" class="Button Button--small"/></p>
+			<p><input type="submit" name="submit" value="Large button" class="Button Button--large"/></p>
+
+			<p>
+				<button class="Button Button--primary Button--full">Button button (primary, full)</button>
+				<a href="#" class="Button Button--full" role="button">Anchor button (full)</a>
+			</p>
+
+			<p><button class="Button Button--primary is-disabled">Button button (primary, disabled)</button></p>
+			<p class="u-spaceTrailerM"><a href="#" class="Button is-disabled" role="button">Anchor button (disabled)</a></p>
+
+		</div>
+
 	</div>
 	<footer role="contentinfo" class="Contain Copy">
 		<p>Dedication, baby!</p>
