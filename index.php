@@ -44,8 +44,8 @@ endif;
 	<meta name="msapplication-TileImage" content="assets/images/favicon-144.png">
 	<meta name="msapplication-TileColor" content="#222222">
 
-	<link rel="stylesheet" href="assets/stylesheets/<?php echo $env_suffix . '/' . $main_css . '.' . $env_suffix ?>.css" />
 	<!--[if (lt IE 9)]><link rel="stylesheet" href="/assets/stylesheets/<?php echo $env_suffix . '/' . $oldie_css . '.' . $env_suffix .'.css'; ?>"><![endif]-->
+	<!--[if gt IE 8]><!--><link rel="stylesheet" href="assets/stylesheets/<?php echo $env_suffix . '/' . $main_css . '.' . $env_suffix ?>.css" /><!--<![endif]-->
 	<link rel="stylesheet" href="assets/stylesheets/<?php echo $env_suffix . '/' . $print_css . '.' . $env_suffix ?>.css" media="print" />
 
 	<?php /* Using Google Fonts? Uncomment this!
