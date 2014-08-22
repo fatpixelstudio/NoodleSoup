@@ -65,24 +65,24 @@ $breaks: small, compact, medium, large, wide, huge;
 // @import "base/base.ruler";
 
 // --------------------------------------------------------------------------
-// objects
+// modules
 // --------------------------------------------------------------------------
 
-@import "objects/objects.backdrop";
-@import "objects/objects.banner";
-@import "objects/objects.block-link";
-@import "objects/objects.buttons";
-@import "objects/objects.fluid-embed";
-@import "objects/objects.forms";
-@import "objects/objects.headings";
-@import "objects/objects.icons";
-@import "objects/objects.layout-grid";
-@import "objects/objects.links";
-@import "objects/objects.masthead";
-@import "objects/objects.nav";
-@import "objects/objects.oldie.message";
-@import "objects/objects.quotes";
-@import "objects/objects.tables";
+@import "modules/modules.backdrop";
+@import "modules/modules.banner";
+@import "modules/modules.block-link";
+@import "modules/modules.buttons";
+@import "modules/modules.fluid-embed";
+@import "modules/modules.forms";
+@import "modules/modules.headings";
+@import "modules/modules.icons";
+@import "modules/modules.layout-grid";
+@import "modules/modules.links";
+@import "modules/modules.masthead";
+@import "modules/modules.nav";
+@import "modules/modules.oldie.message";
+@import "modules/modules.quotes";
+@import "modules/modules.tables";
 
 // --------------------------------------------------------------------------
 // Grunticon
