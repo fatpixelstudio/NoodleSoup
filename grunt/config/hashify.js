@@ -12,17 +12,17 @@ module.exports = function(grunt) {
 			files: [
 				{
 					src: '<%= project.styles_min %>/main.min.css', // md5 of the contents goes in hashmap
-					dest: '<%= project.styles_min %>/{{hash}}.css', // {{hash}} will be replaced with md5 of the contents of the source
+					dest: '<%= project.styles_min %>/{{hash}}.min.css', // {{hash}} will be replaced with md5 of the contents of the source
 					key: 'main', // key to use in the hashmap
 				},
 				{
 					src: '<%= project.styles_min %>/oldie.min.css',
-					dest: '<%= project.styles_min %>/{{hash}}.css',
+					dest: '<%= project.styles_min %>/{{hash}}.min.css',
 					key: 'oldie',
 				},
 				{
 					src: '<%= project.styles_min %>/print.min.css',
-					dest: '<%= project.styles_min %>/{{hash}}.css',
+					dest: '<%= project.styles_min %>/{{hash}}.min.css',
 					key: 'print',
 				},
 			],
@@ -34,12 +34,12 @@ module.exports = function(grunt) {
 			files: [
 				{
 					src: '<%= project.scripts_min %>/head.scripts.min.js',
-					dest: '<%= project.scripts_min %>/{{hash}}.js',
+					dest: '<%= project.scripts_min %>/{{hash}}.min.js',
 					key: 'head',
 				},
 				{
 					src: '<%= project.scripts_min %>/main.scripts.min.js',
-					dest: '<%= project.scripts_min %>/{{hash}}.js',
+					dest: '<%= project.scripts_min %>/{{hash}}.min.js',
 					key: 'main',
 				},
 			],
