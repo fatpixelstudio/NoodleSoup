@@ -15,17 +15,8 @@ if(cutsthemustard){
 		// htmlEl.classList.add('js');
 
 		/* Initiate all available classes */
-		alerts.init(push_message);                // Init alerts
-		navMain.init();                           // Init main navigation
-
-		/* Instant click */
-//		InstantClick.init(50,true);
-
-		/* Echo Lazyloading */
-//		echo.init({
-//			offset: '0',
-//			throttle: '50'
-//		});
+		// alerts.init(push_message);                // Init alerts
+		// navMain.init();                           // Init main navigation
 
 	}, false);
 }
