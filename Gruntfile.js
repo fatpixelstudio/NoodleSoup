@@ -65,6 +65,7 @@ module.exports = function(grunt) {
 				// Classes
 					'<%= project.scripts %>/classes/navmain.class.js',
 					'<%= project.scripts %>/classes/popup.class.js',
+					'<%= project.scripts %>/classes/setheight.jquery.class.js',
 				// Main
 					'<%= project.scripts %>/main.scripts.js',
 				],

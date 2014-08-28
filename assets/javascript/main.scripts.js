@@ -8,6 +8,7 @@
 // alerts.init(push_message);                // Init alerts
 // navMain.init();                           // Init main navigation
 // popup.init();                             // Init popup
+// setheight.init();                         // Init equal height settings
 
 /* Init example of an error in a modal box */
 // alerts.addMessage({status: 'error', content: 'OMG! Something terrible must have happened here!', timeout: 0, type: 'box-modal'});
