@@ -41,6 +41,12 @@
  * Modifier: Different aspect ratio for different breakpoints
  */
 
+/* 16:9 aspect ratio for small and below */
+
+.FluidEmbed--16by9:before {
+	padding-bottom: percentage(9/16) !important;
+}
+
 /* 3:2 aspect ratio for small and below */
 
 .FluidEmbed--3by2:before {
