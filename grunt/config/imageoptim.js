@@ -11,8 +11,8 @@ module.exports = function(grunt) {
 			},
 			src: [
 				// '<%= project.src %>/images/*.jpg',
-				// '<%= project.styles %>/img/*.jpg',
-				'content/**/*.jpg'
+				'<%= project.styles %>/img/*.jpg',
+				// 'content/**/*.jpg'
 			],
 		},
 		pngs: {
@@ -22,8 +22,8 @@ module.exports = function(grunt) {
 			},
 			src: [
 				// '<%= project.src %>/images/*.png',
-				// '<%= project.styles %>/img/*.png',
-				'content/**/*.png'
+				'<%= project.styles %>/img/*.png',
+				// 'content/**/*.png'
 			],
 		},
 	});

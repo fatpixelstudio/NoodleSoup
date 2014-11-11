@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 				removeViewBox: false,
 			}],
 		},
-		dist: {
+		design: {
 			files: [{
 				expand: true,
 				cwd: '<%= project.design_assets %>/svg',
@@ -15,6 +15,15 @@ module.exports = function(grunt) {
 				ext: '.svg',
 			}],
 		},
+		styles: {
+			files: [{
+				expand: true,
+				cwd: '<%= project.styles %>/img',
+				src: ['*.svg'],
+				dest: '<%= project.styles %>/img',
+				ext: '.svg',
+			}],
+		}
 	});
 
 };
