@@ -39,7 +39,8 @@ endif;
 	<!-- Favicons (https://github.com/audreyr/favicon-cheat-sheet) -->
 	<link rel="icon" href="assets/images/favicon-228.png" sizes="228x228">
 	<link rel="icon" href="assets/images/favicon-195.png" sizes="195x195">
-	<link rel="icon" href="assets/images/favicon-96.png" sizes="96x96">
+	<link rel="icon" href="assets/images/favicon-120.png" sizes="120x120">
+	<link rel="icon" href="assets/images/favicon-72.png" sizes="72x72">
 	<link rel="icon" href="assets/images/favicon-32.png" sizes="32x32">
 	<meta name="msapplication-TileImage" content="assets/images/favicon-144.png">
 	<meta name="msapplication-TileColor" content="#222222">
