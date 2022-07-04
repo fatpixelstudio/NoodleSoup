@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Contentinfo (aka site footer)
+   ========================================================================== */
+
+.contentinfo {
+	display: block;
+	margin: rhythm(.5) 0;
+
+	@include breakpoint(medium) {
+		margin: 0;
+	}
+
+	&--slogan {
+		@extend .delta-heading;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Icons (svg)
+   ========================================================================== */
+
+.icon {
+	display: flex;
+	// flex-wrap: nowrap; // nowrap is default!
+	align-items: center;
+
+	> svg {
+		width: 1em;
+		height: 1em;
+		margin-top: -.1em;
+		// fill: currentColor; // Cascading svg fill color (https://css-tricks.com/cascading-svg-fill-color/)
+		// stroke: currentColor; // Cascading svg stroke color
+	}
+
+	&--left {
+
+		> svg {
+			margin-right: .4em;
+		}
+	}
+
+	&--right {
+
+		> svg {
+			margin-left: .4em;
+		}
+	}
+}

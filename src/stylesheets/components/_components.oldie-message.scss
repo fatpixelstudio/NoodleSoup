@@ -1,0 +1,15 @@
+/* ==========================================================================
+   Oldie message
+   ========================================================================== */
+
+.oldie-message {
+	display: block;
+	padding: 2em;
+	background: $color-base-yellow;
+	color: $color-base-black;
+
+	a {
+		text-decoration: underline;
+		color: $color-base-black;
+	}
+}

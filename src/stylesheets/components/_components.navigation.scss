@@ -1,0 +1,335 @@
+/* ==========================================================================
+   Nav
+   ========================================================================== */
+
+/**
+ * Simple navigation
+ * When used on an `ol` or `ul`, it throws the list into horizontal mode
+ *
+ * Example HTML:
+ * <nav role="navigation" class="nav">
+ *   <ul>
+ *     <li class="nav__item"><a href="">link item 1</a></li>
+ *     <li class="nav__item"><a href="">link item 2</a></li>
+ *   </ul>
+ * </nav>
+ */
+
+.nav {
+	list-style: none;
+
+	> li {
+		&,
+		> a {
+			display: inline-block;
+		}
+	}
+}
+
+/**
+ * Simple stacked (vertical) navigation
+ *
+ * Example HTML:
+ * <nav role="navigation">
+ *   <ul class="nav nav--stacked">
+ *     <li><a href="">link item 1</a></li>
+ *     <li><a href="">link item 2</a></li>
+ *     <li><a href="">link item 3</a></li>
+ *   </ul>
+ * </nav>
+ */
+
+.nav--stacked {
+
+	> li {
+		display: list-item;
+
+		> a {
+			display:block;
+		}
+	}
+}
+
+// .nav__item {}
+
+/**
+ * Responsive horizontal/stacked (main) navigation
+ *
+ * Example HTML:
+ * <div class="nav-main"
+ *   <nav role="navigation" class="nav-main__list">
+ *     <ul>
+ *       <li class="nav-main__item"><a href="">link item 1</a></li>
+ *       <li class="nav-main__item"><a href="">link item 2</a></li>
+ *     </ul>
+ *   </nav>
+ * </div>
+ */
+
+/* Nav main (wrapper) */
+
+.nav-main {
+	// @include rgb-alpha(background-color, $color-base-black, .96);
+
+	position: fixed;
+	top: 0;
+	left: -200%;
+	z-index: $z-index-hidden;
+	opacity: 0;
+	margin-top: 0;
+	width: 100%;
+	height: 100%;
+	transform: scale(1.32);
+	background-color: $color-base-black;
+
+	.is-open-main-nav & {
+		z-index: $z-index-nav-main;
+		overflow-y: auto;
+		left: 0;
+		transition: opacity .32s, transform .32s;
+		transform: scale(1);
+		opacity: 100;
+		-webkit-overflow-scrolling: touch; /* Adds momentum scrolling on iOS! */
+	}
+	.is-closing-main-nav & {
+		transition: opacity .32s, transform .32s;
+		transform: scale(1.32);
+		opacity: 0;
+	}
+	@include breakpoint(medium) {
+		position: static;
+		z-index: 1;
+		opacity: 1;
+		height: auto;
+		transform: none;
+		background-color: transparent;
+	}
+}
+
+/* Main nav (list) */
+
+.nav-main__list {
+	display: block;
+	padding: rhythm(1.5) $contain-percentage;
+	padding-top: rhythm(2);
+	padding-bottom: rhythm(2);
+	min-height: 100%;
+	max-width: 100%;
+
+	@include breakpoint(medium) {
+		display: flex;
+		align-items: flex-end;
+		padding: 0;
+		min-height: 0;
+	}
+
+
+	// .is-open-main-nav & {}
+}
+
+/* Stacked (vertical) nav */
+
+.nav-main__item,
+.nav-main__list > li {
+	@extend %heading-font;
+	@include responsive-text-size($text-nav);
+
+	display: block;
+	color: $color-base-white;
+	border-bottom: 1px solid $color-base-black;
+
+	&:last-child {
+		border: none;
+	}
+	> a {
+		display: block;
+		padding-top: rhythm(.5);
+		padding-bottom: rhythm(.5);
+		color: $color-base-white;
+
+		&:hover {
+			color: $color-project-yellow;
+		}
+	}
+
+	@include breakpoint(medium) {
+		position: relative;
+		display: block;
+		margin-bottom: 0;
+		border-bottom: 0;
+
+		> a { /* Horizontal nav */
+			display: block;
+			padding: 0 page-rhythm(1.25);
+		}
+	}
+
+	.sub-menu {
+		// @include responsive-text-size($text-nano);
+		// @include sans-font(400);
+
+		display: block;
+		margin-top: rhythm(-.5);
+		color: $color-base-white;
+		text-transform: none;
+
+		li {
+			display: block;
+			padding: rhythm(.25) rhythm(1);
+			line-height: 1.25;
+
+			a {
+				text-decoration: none;
+				color: $color-base-white;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		@include breakpoint(medium) {
+			position: absolute;
+			left: 0;
+			top: -9999px;
+			display: block;
+			min-width: rhythm(8);
+			margin-top: 0;
+			padding: rhythm(.6) 0 0 0;
+			color: $color-base-black;
+			text-align: left;
+			opacity: 0;
+			border-radius: rhythm(.5);
+			transform: translateY(1em);
+			transition: opacity .24s ease-out, transform .32s ease-out;
+
+			li {
+				display: block;
+				margin: 0;
+				padding: 0;
+				background-color: $color-base-white;
+
+				a {
+					display: block;
+					padding: rhythm(.33) rhythm(1);
+					background-color: $color-base-white;
+					color: $color-base-black;
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				&:first-child {
+					padding-top: rhythm(.33);
+					border-radius: rhythm(.25) rhythm(.25) 0 0;
+				}
+				&:last-child {
+					padding-bottom: rhythm(.33);
+					border-radius: 0 0 rhythm(.25) rhythm(.25);
+				}
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 9px;
+				left: rhythm(1.5);
+				display: block;
+				width: 0;
+				height: 0;
+				margin-top: 2px;
+				border-style: solid;
+				border-width: 0 8px 8px 8px;
+				border-color: transparent transparent $color-base-white transparent;
+			}
+		}
+	}
+
+	&:hover .sub-menu,
+	.sub-menu:hover {
+		top: rhythm(1);
+		opacity: 1;
+		transform: translateY(0em);
+	}
+}
+
+/**
+ * Prevent double scrollbars when `.nav-main` is open
+ */
+
+html.is-open-main-nav {
+	overflow: hidden;
+}
+
+/**
+ * Main nav toggle
+ */
+
+.nav-main-toggle {
+	position: absolute;
+	top: rhythm(.125);
+	right: page-rhythm($contain-rhythm-unit);
+	z-index: $z-index-nav-toggle;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 44pt; /* Touch target sizes: http://j.mp/XJm4uJ */
+	height: 44pt; /* Use padding, or width/height to position icon, so it works nicely on touchdevices */
+
+	@include breakpoint(large) {
+		display: none;
+	}
+}
+
+.nav-main-toggle__label {
+	@extend %is-hidden-visually;
+}
+
+.nav-main-toggle__icon {
+	display: block;
+
+	svg {
+		display: block;
+		width: page-rhythm(2);
+		height: page-rhythm(2);
+		margin: 0;
+	}
+}
+
+.nav-main-toggle--open {
+
+	// .ctm & {}
+}
+
+.nav-main-toggle--close {
+}
+
+/**
+ * Footer nav
+ */
+
+.nav-foot {
+	display: block;
+}
+.nav-foot__list {
+	display: block;
+}
+
+.nav-foot__item,
+.nav-foot__list > li {
+	@include responsive-text-size($text-nano);
+
+	display: inline-block;
+	margin-right: page-rhythm(1.5);
+	margin-bottom: page-rhythm(1);
+
+	a {
+		color: $color-base-white;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

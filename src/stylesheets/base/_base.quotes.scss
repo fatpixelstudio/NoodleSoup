@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Quotes
+   ========================================================================== */
+
+/**
+ * Quote (run-in quote)
+ */
+
+.quote {
+	quotes: none;
+
+	&:before { content: open-quote; }
+	&:after { content: close-quote; }
+
+	/**
+	 * Quotes pairs for two levels in multiple languages
+	 * http://nirusu.me/articles/quote-tag
+	 */
+
+	quotes: '“' '”' "‘" "’";
+	&:lang(en) { quotes: '“' '”' "‘" "’"; }
+	&:lang(nl) { quotes: '“' '”' "‘" "’"; }
+	&:lang(de) { quotes: "„" "“" '‚' '‘'; }
+	&:lang(fr) { quotes: "«" "»" '‹' '›'; }
+	&:lang(hu) { quotes: "„" "“" '»' '«'; }
+	&:lang(jp) { quotes: "「" "」" '『' '』'; }
+	&:lang(zh) { quotes: "「" "」" '『' '』'; } // Traditional Chinese (e.g. Taiwan, Hong Kong); better language code: zh_HANT or zh_CN
+	// &:lang(zh), blockquote:lang(zh) p { quotes: '“' '”' "‘" "’"; } // Simplified Chinese (e.g. mainland China, Singapore); better language code: zh_HANS or zh_TW (from Taiwan)
+}
+
+/**
+ * Blockquote
+ *
+ * A block quotation (also known as a long quotation or extract) is a quotation
+ * in a written document, that is set off from the main text as a paragraph, or
+ * block of text, and typically distinguished visually using indentation and a
+ * different typeface or smaller size quotation. (This is in contrast to a
+ * setting it off with quotation marks in a run-in quote.)
+ * Block quotations are used for the long quotation. The Chicago Manual of Style
+ * recommends using a block quotation when extracted text is 100 words or more,
+ * or at least eight lines.
+ */
+
+.blockquote {
+	position: relative;
+	margin-top: rhythm(1.5);
+	margin-bottom: rhythm(1.5);
+	margin-left: 0;
+	padding-left: rhythm(2.5);
+	// border-left: rhythm(.25) solid $color-gray-m-light;
+	quotes: none;
+	text-align: left;
+
+	&::before {
+		content: '“';
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 6em;
+		line-height: .9;
+		color: $color-gray-light;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	p {
+		@include responsive-text-size($text-beta);
+
+		display: block;
+		margin: 0;
+		line-height: 1.4;
+		// color: $color-gray-x-dark;
+		// text-transform: uppercase;
+		// font-weight: 700;
+
+		// &:before,
+		// &:after {
+		// 	-webkit-font-smoothing: antialiased;
+		// }
+	}
+
+	cite {
+		@include responsive-text-size($text-nano);
+
+		display: block;
+		margin-top: rhythm(.5);
+		font-style: normal;
+	}
+
+	figcaption {
+		// color: $color-base-gray;
+
+		&:before {
+			content: "— ";
+		}
+	}
+
+	// @include breakpoint(medium) {
+	// 	& {
+	// 		margin-left: rhythm(-.75);
+	// 	}
+	// }
+}
+
+/**
+ * Pull quote
+ *
+ * Also known as a lift-out quote --- is a quotation
+ * or excerpt from an article that is typically placed in a larger or distinctive
+ * typeface on the same page (http://en.wikipedia.org/wiki/Pull_quote)
+ *
+ * Example HTML:
+ * <aside class="Pullquote">
+ *   <blockquote>It is the unofficial force---the Baker Street irregulars.</blockquote>
+ * </aside>
+ */
+
+.pullquote {
+	display: block;
+	width: 100%;
+	margin-top: page-rhythm(6);
+	margin-bottom: page-rhythm(6);
+	padding: page-rhythm(3);
+	background-color: $color-gray-x-light;
+	color: $color-base-black;
+	border-radius: page-rhythm(.75);
+
+	@include breakpoint(medium) {
+		padding: page-rhythm(6);
+	}
+}
+
+.pullquote__text {
+	display: block;
+
+	p {
+		display: inline;
+	}
+}
