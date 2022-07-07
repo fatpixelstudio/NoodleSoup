@@ -15,18 +15,18 @@
 		background-color: transparent; // Remove the gray background on active links in IE 10.
 		text-decoration: underline;
 		text-decoration-skip-ink: auto; // See: https://css-tricks.com/more-control-over-text-decoration/
-		color: $color-project-blue;
+		color: $color-base-blue;
 	}
 
 	&:visited {
-		color: $color-project-blue;
+		color: $color-blue-m-light;
 	}
 	&:hover,
 	&:focus {
-		color: $color-project-yellow;
+		color: $color-blue-dark;
 	}
 	&:active {
-		color: $color-project-yellow;
+		color: $color-blue-light;
 		// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
 	}
 }

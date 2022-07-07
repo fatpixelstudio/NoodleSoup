@@ -27,7 +27,7 @@
 	padding: rhythm(.33) rhythm(1.5);
 	border: none;
 	border-radius: page-rhythm(.75);
-	background: $color-project-blue;
+	background: $color-base-blue;
 	color: $color-base-white;
 	text-transform: uppercase;
 	line-height: inherit; /* For anchor button to behave nicely */
@@ -42,7 +42,7 @@
 .button:focus,
 .button:active {
 	text-decoration: none;
-	background-color: $color-project-yellow, 20%;
+	background-color: $color-blue-dark;
 }
 
 .button:active {
@@ -82,16 +82,16 @@
  */
 
 .button--primary {
-	background: $color-project-yellow;
-	color: $color-project-blue;
+	background: $color-blue-light;
+	color: $color-blue-dark;
 
 	&:hover {
-		background: $color-project-blue;
-		color: $color-project-yellow;
+		background: $color-blue-dark;
+		color: $color-blue-light;
 	}
 	&:active {
-		background: $color-project-blue;
-		color: $color-project-yellow;
+		background: $color-blue-dark;
+		color: $color-blue-light;
 	}
 }
 
