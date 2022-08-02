@@ -442,4 +442,18 @@
 	   ========================================================================== */
 
 	@extend .numerals;
+
+
+	/* Buttons
+	   ========================================================================== */
+
+	.wp-block-button__link {
+		@extend .button;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color-base-white !important;
+		}
+	}
 }
