@@ -17,13 +17,7 @@ function isIE() {
 }
 
 domready(function () {
-	FontObserver.init();
-	NavMain.init();
-	Popups.init();
-
-	console.log('test');
-
-	if(isIE()) {
+	if (isIE()) {
 		var body = document.querySelector('body');
 		var oldiemessage = document.createElement('p');
 		oldiemessage.classList.add('oldie-message');
@@ -31,4 +25,10 @@ domready(function () {
 		body.insertBefore(oldiemessage, body.firstChild);
 		return false;
 	}
+
+	FontObserver.init();
+	NavMain.init();
+	Popups.init();
+
+	console.log('test');
 });
