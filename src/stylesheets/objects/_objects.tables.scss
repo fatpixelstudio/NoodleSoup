@@ -62,7 +62,6 @@
 /**
  * Striped tables
  */
-
 .table--striped {
 
 	th,
@@ -70,8 +69,8 @@
 		padding: rhythm(.5);
 	}
 	th {
-		background-color: $color-base-black;
-		color: $color-base-white;
+		background-color: $color-gray-m-light;
+		color: $color-base-black;
 	}
 	th + th,
 	td + td {
@@ -82,12 +81,12 @@
 
 	tbody {
 		tr:nth-child(even) td {
-			background-color: $color-gray-m-light;
+			background-color: $color-gray-x-light;
 		}
-		tr:hover td {
-			background-color: $color-gray-dark;
-			color: $color-base-white;
-		}
+		// tr:hover td {
+		// 	background-color: $color-gray-dark;
+		// 	color: $color-base-white;
+		// }
 	}
 
 }
