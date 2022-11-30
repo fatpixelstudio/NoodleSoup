@@ -23,7 +23,7 @@
 }
 
 %heading-font {
-	@include heading-font(400);
+	@include heading-font(700);
 	font-family: $heading-web-font-stack;
 
 	.fonts-loaded & {

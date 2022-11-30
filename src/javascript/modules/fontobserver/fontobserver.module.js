@@ -17,13 +17,17 @@ var FontObserverHandler = (function () {
 		}
 
 		// Define the fonts and font variants to observed
-		var maison_book = new FontFaceObserver('Maison Neue', {
+		var roboto_book = new FontFaceObserver('Roboto', {
 			weight: 400
+		});
+		var roboto_bold = new FontFaceObserver('Roboto', {
+			weight: 700
 		});
 
 		// Loading groups of fonts with a timeout
 		Promise.all([
-			maison_book.load()
+			roboto_book.load(),
+			roboto_bold.load()
 		]).then(function () {
 			document.documentElement.className += ' fonts-loaded';
 			// document.documentElement.classList.add('fonts-loaded');
