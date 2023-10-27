@@ -8,8 +8,7 @@
  */
 
 ::selection {
-	@include rgb-alpha(background-color, $color-base-black, .8);
-
 	color: $color-base-white;
 	text-shadow: none;
+	background-color: rgba($color-base-black, .8);
 }

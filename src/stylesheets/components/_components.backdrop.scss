@@ -3,14 +3,13 @@
    ========================================================================== */
 
 .backdrop {
-	@include rgb-alpha(background-color, $color-base-black, .6);
-
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	z-index: $z-index-backdrop;
+	background-color: rgba($color-base-black, .6);
 
 	// Animation
 	&.js-backdrop {
