@@ -1,0 +1,216 @@
+/* ==========================================================================
+   Copy
+   ========================================================================== */
+
+/**
+ * Scoped styles of blocks of (body) content
+ */
+
+.copy {
+
+	&--max {
+		max-width: $text-max-width;
+	}
+
+	/* Margins
+	========================================================================== */
+
+	p,
+	ul,
+	ol,
+	dl {
+		margin-bottom: rhythm(1);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	h2 {
+		margin-top: rhythm(2);
+		margin-bottom: rhythm(.25);
+	}
+
+	h3 {
+		margin-top: rhythm(2);
+		// margin-bottom: rhythm(.5);
+	}
+
+	/* Paragraphs
+	   ========================================================================== */
+
+	p {
+		@extend %text-hang;
+	}
+
+	/* Headings
+	   ========================================================================== */
+
+	/* Scoped headings (see extend-selectors.scss for corresponding 'unscoped' classes) */
+
+	h1 { @extend .beta-heading; }
+	h2 { @extend .gamma-heading; }
+	h3 { @extend .delta-heading; }
+	h4 { @extend .epsilon-heading; }
+	h5,
+	h6 { @extend .zeta-heading; }
+
+	/* Figures
+	   ========================================================================== */
+
+	// figure {}
+
+	/* Pull, block- and run-in quotes
+	   ========================================================================== */
+
+	// .quote {}
+
+	blockquote,
+	.blockquote,
+	.wp-block-quote {
+		@extend .blockquote;
+	}
+
+
+	// .pullquote {}
+
+	/* Inline Elements
+	   ========================================================================== */
+
+	i,
+	em,
+	cite,
+	dfn,
+	var {
+		@extend %text-italic;
+	}
+
+	b,
+	strong {
+		@extend %text-bold;
+	}
+
+	small {
+		@extend %text-small;
+	}
+
+	// time {
+	// 	@extend %text-time;
+	// }
+
+	mark {
+		@extend %text-mark;
+	}
+
+	ins {
+		background-color: rgb(253,254,206);
+		color: $color-base-black;
+		text-decoration: underline;
+		text-decoration-color: $color-gray-m-light;
+	}
+
+	del {
+		background-color: rgb(248,0,0);
+		color: $color-base-black;
+		// text-decoration: line-through;
+	}
+
+	abbr {
+		letter-spacing: .02rem;
+		font-variant: small-caps; // https://developer.mozilla.org/en-US/docs/CSS/font-variant
+		text-transform: lowercase; // Enable if no small caps are a part of the webfont!
+		font-size: 112%; // Enable if no small caps are a part of the webfont!
+
+		&[title] {
+			border: none;
+			// text-decoration: underline;
+			// text-decoration: underline dotted;
+			text-decoration: none;
+			cursor: help;
+			// background-color: $color-gray-xx-light;
+			border-bottom: 1px dotted $color-base-black;
+		}
+	}
+
+	code,
+	kbd,
+	pre,
+	samp {
+		font-family: $mono-font-stack;
+	}
+
+	code {
+		background-color: $color-gray-x-light;
+	}
+
+	/* Lists
+	   ========================================================================== */
+
+	/* Unordered lists */
+
+	ul,
+	ol {
+		@extend .list;
+		// @extend .list--plain;
+	}
+
+	/* Definition lists */
+
+	// dl { }
+
+	dt {
+		font-weight: 700;
+	}
+
+	dd {
+		margin-left: rhythm(1);
+	}
+
+	/* Links
+	   ========================================================================== */
+
+	a:not(.button) {
+		@extend .link;
+	}
+
+	/* External page links */
+
+	// [href^="http:"]:not([href*="mydomain.com"]) { }
+
+	/* Secure link */
+
+	// [href^="https"]:before { content: "\1F512 "; }
+
+	/* PDF link */
+
+	// [href$="pdf"] { }
+
+	/* Email link */
+
+	// [href^="mailto:"] { }
+
+	/* Twitter link */
+
+	// [href*="twitter.com"] {}
+
+	/* Tables
+	   ========================================================================== */
+
+	table {
+		@extend .table;
+		@extend .table--striped;
+	}
+
+	/* Buttons
+	   ========================================================================== */
+
+	.wp-block-button__link {
+		@extend .button;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color-base-white !important;
+		}
+	}
+}

@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/**
+ * The button classes are best applied to links, buttons, and submit inputs.
+ * These components can be used in forms, as calls to action, or as part of the
+ * general UI of the site/app.
+ *
+ * Recommended use:
+ *
+ * <a class="button [button--modifier]" role="button" href="[url]">Button text</a>
+ * <button class="button [button--modifier]" type="submit">Button text</button>
+ * <input class="button [button--modifier]" type="submit" value="Button text">
+ */
+
+
+/**
+ * Basic button structural styling. Extend in your theme stylesheet.
+ */
+
+.button {
+	@extend %heading-alt-font-bold;
+	@include responsive-text-size($text-button);
+
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	padding: page-rhythm(1) page-rhythm(3);
+	border: none;
+	border-radius: page-rhythm(6);
+	background: $color-vv-green;
+	color: $color-base-white;
+	// cursor: pointer; // Already in normalize.css
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* Hide transparent highlight color that appears when tapping on iOS/Android */
+	transition: background-color .24s ease-out, color .24s ease-out, border-color .24s ease-out;
+
+
+	&:has(.button__text)::after {
+		content: '';
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 0;
+		display: block;
+		width: page-rhythm(1);
+		height: page-rhythm(1);
+		background: $color-vv-green-dark;
+		border-radius: 50%;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(1);
+		transition: opacity .24s ease-out, transform .4s ease-out;
+	}
+}
+
+/* Button states */
+
+.button:hover,
+.button:focus,
+.button:active {
+	text-decoration: none;
+	background-color: $color-base-black;
+
+	&:has(.button__text) {
+		background-color: $color-vv-green;
+		&::after {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(30);
+		}
+	}
+}
+
+.button:active {
+	top: 1px;
+	outline: none;
+	// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
+}
+
+.button:disabled:not(.content__respond-button),
+.button.is-disabled {
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		top: 0;
+		margin-top: 0;
+		background: $color-gray-x-light !important;
+		color: $color-gray-light !important;
+		cursor: default !important;
+	}
+}
+
+.button__text {
+	position: relative;
+	z-index: 1;
+}
+
+.button__icon {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	vertical-align: baseline;
+	margin-left: rhythm(.5);
+	transform: translateX(0);
+	transition: transform .24s ease-out;
+
+	svg path {
+		fill: $color-base-white;
+		transition: fill .24s ease-out;
+	}
+}
+
+/**
+ * Primary button
+ */
+
+.button--primary {
+	background: $color-vv-green;
+	color: $color-base-white;
+
+	&:hover {
+		background: $color-base-black;
+	}
+	&:active {
+		background: $color-base-black;
+	}
+}
+
+/**
+ * Secondary button
+ */
+
+.button--secondary {
+	border: 1px solid $color-base-black;
+	background-color: transparent;
+	color: $color-base-black;
+
+	.button__icon svg path {
+		fill: $color-base-black;
+	}
+
+	&:has(.button__text)::after {
+		background: $color-base-black;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $color-base-black;
+		color: $color-base-white;
+		border-color: $color-base-black;
+
+		&:has(.button__text) {
+			background-color: transparent;
+		}
+
+		.button__icon svg path {
+			fill: $color-base-white;
+		}
+
+		&:has(.button__text)::after {
+			background: $color-base-black;
+		}
+	}
+}
+
+.button--outline {
+	border: 1px solid $color-base-white;
+	background-color: transparent;
+	color: $color-base-white;
+}
+
+/**
+ * Button size modifiers
+ */
+
+.button--small {
+	// margin-bottom: rhythm(.5);
+	padding: page-rhythm(1) page-rhythm(1.75);
+}
+
+.button--large {
+	// margin-bottom: rhythm(.5);
+	padding: rhythm(.75) rhythm(1.25);
+}
+
+/* Full width button */
+
+.button--full {
+	display: block;
+	padding-right: 0;
+	padding-left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+/* Full width button on small screens, auto width button on medium and large screens */
+
+.button--fluid {
+	display: block;
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	text-align: center;
+
+	@include breakpoint(large) {
+		display: inline-block;
+		width: auto;
+		padding: page-rhythm(1) page-rhythm(3);
+		text-align: left;
+	}
+}
+
+/**
+ * Faux button
+ */
+
+.faux-button {
+	display: inline-block;
+	padding: 0;
+	border: none;
+	background: transparent;
+	color: inherit;
+}

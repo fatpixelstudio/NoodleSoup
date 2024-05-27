@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Skip links
+   ========================================================================== */
+
+.skip-link,
+%skip-link {
+	position: absolute;
+	left: 50%;
+	height: auto;
+	padding: rhythm(.25) rhythm(.5);
+	background: $color-base-black;
+	color: $color-base-white;
+	transform: translateY(-100%) translateX(-50%);
+	transition: transform 0.32s;
+	z-index: $z-index-alert;
+
+	&:focus {
+		transform: translateY(0%) translateX(-50%);
+	}
+}

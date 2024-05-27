@@ -2,13 +2,9 @@
 
 Front-end starter kit by Fat Pixel.
 
-This repository is under heavy construction.
-
 A collection of scripts, styles and a yarn / webpack bundler for your projects.
 
-Some PHP files that you can use for reference how to call the different assets. You could also use this as a drop-in starterkit.
-
-Want to use this with Wordpress? Lose the PHP and use my Wordpress starter kit [StickyRice](https://github.com/fatpixelstudio/StickyRice)!
+No HTML, just the styles and scripts. 
 
 ## Why NoodleSoup?
 

@@ -8,8 +8,8 @@ module.exports = {
   //   children : true
   // },
   entry: {
-    main: './src/javascript/main.scripts.js',
-	head: './src/javascript/head.scripts.js',
+    main: './src/scripts/main.scripts.js',
+	head: './src/scripts/head.scripts.js',
   },
   module: {
     rules: [{

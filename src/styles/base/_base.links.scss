@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+.link {
+
+	// Sometimes, particularly on larger projects, it is useful to scope
+	// link styling only to anchors which have 'href' attributes,
+	// therefore the use of :link
+	&:link {
+		// @include underline($color-blue-m-light);
+
+		position: relative;
+		transition: color .24s ease-out;
+		background-color: transparent; // Remove the gray background on active links in IE 10.
+		text-decoration: underline;
+		text-decoration-skip-ink: auto; // See: https://css-tricks.com/more-control-over-text-decoration/
+		color: inherit;
+	}
+
+	&:visited {
+		color: inherit;
+	}
+	&:hover,
+	&:focus {
+		color: $color-base-black;
+	}
+	&:active {
+		color: $color-vv-green;
+		// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
+	}
+}
+
+/* No visited link color (browser history) */
+
+.link--no-history {
+	&:visited {
+		color: $color-base-black;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: inherit;
+	}
+}

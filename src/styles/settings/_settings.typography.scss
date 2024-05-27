@@ -1,0 +1,98 @@
+// --------------------------------------------------------------------------
+// Typography
+// --------------------------------------------------------------------------
+
+// Font stacks
+// --------------------------------------------------------------------------
+
+$sans-font-stack:               "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, ArialMT, sans-serif;
+$sans-web-font-stack:           "Glypha", $sans-font-stack;
+
+$heading-font-stack:            "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
+$heading-web-font-stack:        "Glypha", $heading-font-stack;
+
+$heading-alt-font-stack:        "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
+$heading-alt-web-font-stack:    "Vectora", $heading-font-stack;
+
+$serif-font-stack:              "Lucida Bright", "LucidaBright", Georgia, serif;
+$mono-font-stack:               Monaco, "Courier New", "CourierNewPSMT", Courier, monospace, serif;
+
+// Text sizing
+// --------------------------------------------------------------------------
+
+$text-sizes: (
+	null:                       (18px, 1.56),                                    // base font size(s) and line height(s)
+	small:                      (18px),
+	compact:                    (18px),
+	medium:                     (18px),
+	large:                      (20px, 1.6),
+);
+
+$text-mega: (                                                                // bg-link heading font size(s) and line height(s)
+	null:                       (2.22rem, 1.222),
+	large:                      (3.2rem, 1.125),
+);
+
+$text-alpha: (                                                                  // alpha heading font size(s) and line height(s)
+	null:                       (2.22rem, 1.222),
+	// medium:                     (3rem),
+	// medium:                     (2.5rem, 1.125),
+	large:                      (2.4rem),
+	// large:                      (3rem, 1.05),
+);
+
+$text-beta: (                                                                   // beta heading font size(s) and line height(s)
+	null:                       (2rem, 1.154),
+	medium:                     (2.5rem),
+	// medium:                     (2rem, 1.25),
+	large:                      (2.5rem),
+	// medium:                     (2.25rem, 1.25),
+);
+
+$text-gamma: (                                                                  // gamma heading font size(s) and line height(s)
+	null:                       (1.556rem, 1.142),
+	large:                      (1.4rem),
+	// large:                      (1.75rem, 1.25),
+);
+
+$text-delta: (                                                                  // delta heading font size(s) and line height(s)
+	null:                       (1.111rem),
+	// null:                       (1.125rem, 1.111),
+	// medium:                     (1rem),
+	// medium:                     (1.125rem, 1.222),
+);
+
+$text-epsilon: (                                                                // epsilon heading font size(s) and line height(s)
+	null:                       (1rem),
+	large:                      (.9rem)
+	// null:                       (1rem, 1.4),
+);
+
+$text-zeta: (                                                                   // zeta heading font size(s) and line height(s)
+	null:                       (.889rem),
+	large:                      (1rem),
+	// null:                       (1rem, 1.4),
+);
+
+$text-nano: (                                                                   // nano heading font size(s) and line height(s)
+	null:                       (.889rem),
+	large:                      (.8rem)
+);
+
+$text-pico: (                                                                   // pico heading font size(s) and line height(s)
+	null:                       (.75rem),
+);
+
+$text-micro: (                                                                   // pico heading font size(s) and line height(s)
+	null:                       (.611rem),
+);
+
+$text-nav: (
+	null:                       (1.5rem),
+	large:                      (.9rem),
+);
+
+$text-button: (
+	null:                       (1.111rem, 1.6),
+	large:                      (1rem, 1.6),
+);
