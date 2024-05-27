@@ -79,10 +79,6 @@
 			&--2col {
 				grid-column: auto / span 2;
 			}
-
-			&--logo {
-				grid-row: 4;
-			}
 		}
 
 		@include breakpoint(large) {
@@ -90,10 +86,6 @@
 				// And this
 				grid-row: auto;
 				grid-column: auto;
-			}
-
-			&--logo {
-				grid-row: auto;
 			}
 
 			&--2col {
@@ -110,6 +102,18 @@
 
 			&--6col {
 				grid-column: auto / span 6;
+			}
+
+			&--8col {
+				grid-column: auto / span 8;
+			}
+
+			&--9col {
+				grid-column: auto / span 9;
+			}
+
+			&--10col {
+				grid-column: auto / span 10;
 			}
 
 		}
