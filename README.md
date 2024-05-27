@@ -10,7 +10,7 @@ No HTML, just the styles and scripts.
 
 I know. It's a silly name. If you really need to know the reason why such a silly name for a front-end starter kit, here goes. The name of my one-man web studio is Fat Pixel. I figured the starter kit should be something dinner related. So because it's a 'starter', let's give it the name of an entree. And also because of:
 
-![Friends, season 5, Joey says: Mmmmm Noodlesoup](https://i.giphy.com/media/hs1UzQcCFPdrLrek5Z/giphy.gif)
+<img src="https://i.giphy.com/media/hs1UzQcCFPdrLrek5Z/giphy.gif" alt="Friends, season 5, Joey says: Mmmmm Noodlesoup" />
 
 So there's that: Noodle Soup. A silly name.
 
