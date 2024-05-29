@@ -29,29 +29,11 @@
 	padding: page-rhythm(1) page-rhythm(3);
 	border: none;
 	border-radius: page-rhythm(6);
-	background: $color-vv-green;
+	background: $color-base-black;
 	color: $color-base-white;
 	// cursor: pointer; // Already in normalize.css
 	-webkit-tap-highlight-color: rgba(0,0,0,0); /* Hide transparent highlight color that appears when tapping on iOS/Android */
 	transition: background-color .24s ease-out, color .24s ease-out, border-color .24s ease-out;
-
-
-	&:has(.button__text)::after {
-		content: '';
-
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: 0;
-		display: block;
-		width: page-rhythm(1);
-		height: page-rhythm(1);
-		background: $color-vv-green-dark;
-		border-radius: 50%;
-		opacity: 0;
-		transform: translate(-50%, -50%) scale(1);
-		transition: opacity .24s ease-out, transform .4s ease-out;
-	}
 }
 
 /* Button states */
@@ -61,14 +43,6 @@
 .button:active {
 	text-decoration: none;
 	background-color: $color-base-black;
-
-	&:has(.button__text) {
-		background-color: $color-vv-green;
-		&::after {
-			opacity: 1;
-			transform: translate(-50%, -50%) scale(30);
-		}
-	}
 }
 
 .button:active {
@@ -116,7 +90,7 @@
  */
 
 .button--primary {
-	background: $color-vv-green;
+	background: $color-base-black;
 	color: $color-base-white;
 
 	&:hover {
