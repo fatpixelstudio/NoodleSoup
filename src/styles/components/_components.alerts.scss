@@ -116,8 +116,6 @@
  */
 
 .alert__close {
-	@extend .pseudo-link;
-
 	position: absolute !important;
 	top: rhythm(1);
 	right: rhythm(1);
