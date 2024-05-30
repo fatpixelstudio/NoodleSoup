@@ -18,11 +18,11 @@ $mono-font-stack:               Monaco, "Courier New", "CourierNewPSMT", Courier
 // --------------------------------------------------------------------------
 
 $text-sizes: (
-	null:                       (18px, 1.56),                                    // base font size(s) and line height(s)
-	small:                      (18px),
-	compact:                    (18px),
-	medium:                     (18px),
-	large:                      (20px, 1.6),
+	null:                       (16px, 1.56),                                    // base font size(s) and line height(s)
+	small:                      (16px),
+	compact:                    (16px),
+	medium:                     (16px),
+	large:                      (18px, 1.6),
 );
 
 $text-mega: (                                                                // bg-link heading font size(s) and line height(s)
@@ -73,15 +73,14 @@ $text-zeta: (                                                                   
 
 $text-nano: (                                                                   // nano heading font size(s) and line height(s)
 	null:                       (.889rem),
-	large:                      (.8rem)
 );
 
 $text-pico: (                                                                   // pico heading font size(s) and line height(s)
-	null:                       (.75rem),
+	null:                       (.778rem),
 );
 
 $text-micro: (                                                                   // pico heading font size(s) and line height(s)
-	null:                       (.611rem),
+	null:                       (.667rem),
 );
 
 $text-nav: (
