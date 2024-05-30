@@ -20,7 +20,6 @@
  */
 
 .button {
-	@extend %heading-alt-font-bold;
 	@include responsive-text-size($text-button);
 
 	position: relative;
