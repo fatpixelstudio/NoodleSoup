@@ -26,15 +26,15 @@ $text-sizes: (
 );
 
 $text-mega: (                                                                // bg-link heading font size(s) and line height(s)
-	null:                       (2.22rem, 1.222),
-	large:                      (3.2rem, 1.125),
+	null:                       (3rem, 1.222),
+	large:                      (3.5rem, 1.125),
 );
 
 $text-alpha: (                                                                  // alpha heading font size(s) and line height(s)
-	null:                       (2.22rem, 1.222),
+	null:                       (2.75rem, 1.222),
 	// medium:                     (3rem),
 	// medium:                     (2.5rem, 1.125),
-	large:                      (2.4rem),
+	large:                      (3rem),
 	// large:                      (3rem, 1.05),
 );
 
@@ -47,13 +47,13 @@ $text-beta: (                                                                   
 );
 
 $text-gamma: (                                                                  // gamma heading font size(s) and line height(s)
-	null:                       (1.556rem, 1.142),
-	large:                      (1.4rem),
+	null:                       (1.5rem, 1.142),
+	large:                      (1.5rem),
 	// large:                      (1.75rem, 1.25),
 );
 
 $text-delta: (                                                                  // delta heading font size(s) and line height(s)
-	null:                       (1.111rem),
+	null:                       (1.25rem),
 	// null:                       (1.125rem, 1.111),
 	// medium:                     (1rem),
 	// medium:                     (1.125rem, 1.222),
@@ -61,7 +61,7 @@ $text-delta: (                                                                  
 
 $text-epsilon: (                                                                // epsilon heading font size(s) and line height(s)
 	null:                       (1rem),
-	large:                      (.9rem)
+	large:                      (1rem)
 	// null:                       (1rem, 1.4),
 );
 
@@ -86,10 +86,5 @@ $text-micro: (                                                                  
 
 $text-nav: (
 	null:                       (1.5rem),
-	large:                      (.9rem),
-);
-
-$text-button: (
-	null:                       (1.111rem, 1.6),
-	large:                      (1rem, 1.6),
+	large:                      (1rem),
 );

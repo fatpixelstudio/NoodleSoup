@@ -20,14 +20,12 @@
  */
 
 .button {
-	@include responsive-text-size($text-button);
-
 	position: relative;
 	overflow: hidden;
 	display: inline-block;
 	padding: page-rhythm(1) page-rhythm(3);
 	border: none;
-	border-radius: page-rhythm(6);
+	border-radius: 0;
 	background: $color-base-black;
 	color: $color-base-white;
 	// cursor: pointer; // Already in normalize.css
