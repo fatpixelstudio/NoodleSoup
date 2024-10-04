@@ -270,14 +270,15 @@ html.is-open-main-nav {
 
 .nav-main-toggle {
 	position: absolute;
-	top: rhythm(.125);
+	top: rhythm(1);
 	right: page-rhythm($contain-rhythm-unit);
 	z-index: $z-index-nav-toggle;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 	width: 44pt; /* Touch target sizes: http://j.mp/XJm4uJ */
 	height: 44pt; /* Use padding, or width/height to position icon, so it works nicely on touchdevices */
+	background-color: $color-base-black;
 
 	@include breakpoint(large) {
 		display: none;
