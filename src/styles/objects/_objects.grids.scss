@@ -39,7 +39,6 @@
 	.grid {
 		display: grid;
 		grid-gap: page-rhythm(1);
-		margin: 0;
 		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 
 		@include breakpoint(compact) {}
