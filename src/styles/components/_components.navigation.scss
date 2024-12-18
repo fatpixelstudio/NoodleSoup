@@ -193,26 +193,26 @@
 			position: absolute;
 			left: 0;
 			top: -9999px;
+			z-index: $z-index-nav-dropdown;
 			display: block;
 			min-width: rhythm(8);
-			margin-top: 0;
-			padding: rhythm(.6) 0 0 0;
+			margin-top: rhythm(1);
+			padding: rhythm(1);
 			color: $color-base-black;
 			text-align: left;
 			opacity: 0;
-			border-radius: rhythm(.5);
 			transform: translateY(1em);
 			transition: opacity .24s ease-out, transform .32s ease-out;
+			background-color: $color-base-white;
+			border-radius: $border-radius;
 
 			li {
 				display: block;
 				margin: 0;
 				padding: 0;
-				background-color: $color-base-white;
 
 				a {
 					display: block;
-					padding: rhythm(.33) rhythm(1);
 					background-color: $color-base-white;
 					color: $color-base-black;
 					text-decoration: none;
@@ -221,26 +221,27 @@
 						text-decoration: underline;
 					}
 				}
-
-				&:first-child {
-					padding-top: rhythm(.33);
-					border-radius: rhythm(.25) rhythm(.25) 0 0;
-				}
-				&:last-child {
-					padding-bottom: rhythm(.33);
-					border-radius: 0 0 rhythm(.25) rhythm(.25);
-				}
 			}
 
 			&::before {
 				content: '';
 				position: absolute;
-				top: 9px;
+				top: rhythm(-1.5);
+				display: block;
+				height: rhythm(1.5);
+				width: 100%;
+				background-color: transparent;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: -8px;
 				left: rhythm(1.5);
 				display: block;
 				width: 0;
 				height: 0;
-				margin-top: 2px;
+				margin-top: 0;
 				border-style: solid;
 				border-width: 0 8px 8px 8px;
 				border-color: transparent transparent $color-base-white transparent;
