@@ -26,7 +26,7 @@ html {
 	overflow-y: auto; // [4]
 	overflow-x: hidden; // [5]
 	min-height: 100%; // [6]
-	color: $color-base-black;
+	color: $foreground-color;
 	background-color: $background-color;
 	font-family: $sans-web-font-stack;
 	font-weight: normal;
