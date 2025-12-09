@@ -1,14 +1,14 @@
 // svgo.config.js
 module.exports = {
-  plugins: [
+  "plugins": [
     {
-      name: 'preset-default',
-      params: {
-        overrides: {
-          // or disable plugins
-          removeViewBox: false,
-        },
-      },
+      "name": "preset-default"
     },
-  ],
+	{
+		"name": "removeTitle",
+		"params": {
+			"removeTitle": true
+		}
+	}
+  ]
 };
