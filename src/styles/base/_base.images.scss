@@ -55,7 +55,7 @@ figure > img {
 // }
 
 /**
- * Wordpress image aligns
+ * Wordpress image aligns and captions
  */
 
 .copy {
@@ -90,6 +90,25 @@ figure > img {
 
 	.size-content-width-quarter {
 		width: 25%;
+	}
+
+	// WordPress adds inline width on caption wrappers; force fluid behavior.
+	.wp-caption {
+		max-width: 100% !important;
+		width: auto !important;
+	}
+
+	.wp-caption img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.wp-caption-text {
+		@include responsive-text-size($text-nano);
+
+		margin-top: rhythm(.5);
+		margin-bottom: rhythm(1) !important; // Force margin-bottom on caption text, overriding default margin-bottom from WordPress.
 	}
 }
 
