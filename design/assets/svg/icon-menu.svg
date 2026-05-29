@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-menu</title>
+    <g id="icon-menu" stroke="none" fill="none" stroke-linecap="round" stroke-width="3">
+        <line x1="3.5" y1="11.5" x2="42.5" y2="11.5" id="Line" stroke="#FFFFFF"></line>
+        <line x1="3.5" y1="23.5" x2="42.5" y2="23.5" id="Line" stroke="#FFFFFF"></line>
+        <line x1="3.5" y1="35.5" x2="42.5" y2="35.5" id="Line" stroke="#FFFFFF"></line>
+    </g>
+</svg>
