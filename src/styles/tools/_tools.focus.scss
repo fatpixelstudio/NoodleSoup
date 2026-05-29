@@ -1,0 +1,15 @@
+// --------------------------------------------------------------------------
+// Focus visible
+// --------------------------------------------------------------------------
+// Applies a consistent :focus-visible ring. Style it via $focus-outline
+// and $focus-outline-offset in settings.page.
+// --------------------------------------------------------------------------
+
+@use '../settings/settings.page' as *;
+
+@mixin focus-visible {
+	&:focus-visible {
+		outline: $focus-outline;
+		outline-offset: $focus-outline-offset;
+	}
+}

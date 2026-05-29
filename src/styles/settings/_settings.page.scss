@@ -34,3 +34,9 @@ $figure-max-width:             58rem;
 $box-shadow:                   0 page-rhythm(.5) page-rhythm(1) rgba(0,0,0,.08);
 
 $border-radius:                page-rhythm(1);
+
+// Focus visible
+// --------------------------------------------------------------------------
+
+$focus-outline:                .125em dashed $color-base-black;
+$focus-outline-offset:         .2em;
