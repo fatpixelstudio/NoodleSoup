@@ -11,6 +11,12 @@
 	width: 100%;
 	max-width: 200px;
 	border: 2px dotted $color-base-gray;
+
+	a {
+		display: block;
+
+		@include focus-visible;
+	}
 }
 
 .masthead__label {

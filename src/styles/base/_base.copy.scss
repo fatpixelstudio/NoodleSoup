@@ -38,11 +38,19 @@
 	h2 {
 		margin-top: rhythm(2);
 		margin-bottom: rhythm(.25);
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 
 	h3 {
 		margin-top: rhythm(2);
 		// margin-bottom: rhythm(.5);
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 
 	/* Paragraphs

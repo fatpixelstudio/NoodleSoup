@@ -820,11 +820,11 @@ html {
   position: relative;
   margin-top: 48px;
   margin-bottom: 48px;
-  padding: 36px;
+  padding-left: 2.34rem;
+  border-left: 0.39rem solid rgb(198.68, 199.56, 200.88);
   quotes: none;
   text-align: left;
-  background-color: rgb(167.96, 169.32, 171.36);
-  border-radius: 16px;
+  color: rgb(15.24, 15.48, 15.84);
   line-height: 1.333;
   font-size: 1.5rem;
   line-height: 1.142;
@@ -911,6 +911,10 @@ html {
 }
 .link:active, .copy a:active:not(.button), .list--links a:active {
   color: rgb(0, 0, 0);
+}
+.link:focus-visible, .copy a:focus-visible:not(.button), .list--links a:focus-visible {
+  outline: 0.125em dashed rgb(0, 0, 0);
+  outline-offset: 0.2em;
 }
 
 /* No visited link color (browser history) */
@@ -1145,6 +1149,10 @@ ol.list > li,
   -webkit-transition: background-color 0.24s ease-out, color 0.24s ease-out, border-color 0.24s ease-out;
   transition: background-color 0.24s ease-out, color 0.24s ease-out, border-color 0.24s ease-out;
 }
+.button:focus-visible, .copy .wp-block-button__link:focus-visible {
+  outline: 0.125em dashed rgb(0, 0, 0);
+  outline-offset: 0.2em;
+}
 
 /* Button states */
 .button:hover, .copy .wp-block-button__link:hover,
@@ -1350,8 +1358,14 @@ ol.list > li,
   margin-top: 3.12rem;
   margin-bottom: 0.39rem;
 }
+.copy h2:first-child {
+  margin-top: 0;
+}
 .copy h3 {
   margin-top: 3.12rem;
+}
+.copy h3:first-child {
+  margin-top: 0;
 }
 .copy ins {
   background-color: rgb(253, 254, 206);
@@ -2174,6 +2188,13 @@ a.block-link__anchor {
   max-width: 200px;
   border: 2px dotted rgb(127, 129, 132);
 }
+.masthead a {
+  display: block;
+}
+.masthead a:focus-visible {
+  outline: 0.125em dashed rgb(0, 0, 0);
+  outline-offset: 0.2em;
+}
 
 .masthead__logo {
   display: block;
@@ -2344,6 +2365,11 @@ a.block-link__anchor {
 .nav-main__item > a:hover,
 .nav-main__list > li > a:hover {
   color: rgb(127, 129, 132);
+}
+.nav-main__item > a:focus-visible,
+.nav-main__list > li > a:focus-visible {
+  outline: 0.125em dashed rgb(0, 0, 0);
+  outline-offset: 0.2em;
 }
 @media (min-width: 48em) {
   .nav-main__item,
@@ -2628,7 +2654,7 @@ html.is-open-main-nav {
   padding-right: 24px !important;
   padding-left: 24px !important;
 }
-@media (min-width: 80em) {
+@media (min-width: 90em) {
   .contain-padding,
   .contain-width {
     padding-right: 0 !important;
@@ -2666,6 +2692,10 @@ html.is-open-main-nav {
 .skip-link:focus {
   -webkit-transform: translateY(0%) translateX(-50%);
           transform: translateY(0%) translateX(-50%);
+}
+.skip-link:focus-visible {
+  outline: 0.125em dashed rgb(0, 0, 0);
+  outline-offset: 0.2em;
 }
 
 /* ==========================================================================

@@ -46,12 +46,11 @@
 	position: relative;
 	margin-top: page-rhythm(3);
 	margin-bottom: page-rhythm(3);
-	padding: page-rhythm(2.25);
-	// border-left: rhythm(.25) solid $color-gray-m-light;
+	padding-left: rhythm(1.5);
+	border-left: rhythm(.25) solid $color-gray-m-light;
 	quotes: none;
 	text-align: left;
-	background-color: $color-gray-light;
-	border-radius: $border-radius;
+	color: $color-gray-x-dark;
 	line-height: 1.333;
 
 	@extend %text-bold;

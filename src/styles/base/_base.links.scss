@@ -31,6 +31,8 @@
 		color: $color-base-black;
 		// transition: none; // Check out article about UI feedback: http://bfred.it/notes/?p=46
 	}
+
+	@include focus-visible;
 }
 
 /* No visited link color (browser history) */

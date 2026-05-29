@@ -153,6 +153,8 @@
 		&:hover {
 			color: $color-base-gray;
 		}
+
+		@include focus-visible;
 	}
 
 	@include breakpoint(medium) {

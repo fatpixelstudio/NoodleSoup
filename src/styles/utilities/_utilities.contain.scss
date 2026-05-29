@@ -17,14 +17,14 @@
 	// 	padding-right: rhythm(1.5 * $contain-rhythm-unit) !important;
 	// 	padding-left: rhythm(1.5 * $contain-rhythm-unit) !important;
 	// }
-	@include breakpoint(chunky) {
+	// @include breakpoint(chunky) {
+	// 	padding-right: 0 !important;
+	// 	padding-left: 0 !important;
+	// }
+	@include breakpoint(wide) {
 		padding-right: 0 !important;
 		padding-left: 0 !important;
 	}
-	// @include breakpoint(wide) {
-	// 	padding-right: rhythm(2 * $contain-rhythm-unit) !important;
-	// 	padding-left: rhythm(2 * $contain-rhythm-unit) !important;
-	// }
 	// @include breakpoint(huge) {
 	// 	padding-right: rhythm(3 * $contain-rhythm-unit) !important;
 	// 	padding-left: rhythm(3 * $contain-rhythm-unit) !important;
