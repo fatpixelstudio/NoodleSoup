@@ -1,3 +1,12 @@
+@use '../config' as *;
+@use '../utilities/utilities.text' as *;
+@use '../base/base.headings' as *;
+@use '../base/base.quotes' as *;
+@use '../base/base.lists' as *;
+@use '../base/base.links' as *;
+@use '../base/base.tables' as *;
+@use '../objects/objects.buttons' as *;
+
 /* ==========================================================================
    Copy
    ========================================================================== */

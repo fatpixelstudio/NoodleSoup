@@ -1,3 +1,6 @@
+@use '../config' as *;
+@use '../utilities/utilities.text' as *;
+
 /* ==========================================================================
    Quotes
    ========================================================================== */
@@ -7,25 +10,23 @@
  */
 
 .quote {
-	quotes: none;
-
-	&:before { content: open-quote; }
-	&:after { content: close-quote; }
-
 	/**
 	 * Quotes pairs for two levels in multiple languages
 	 * http://nirusu.me/articles/quote-tag
 	 */
 
-	quotes: '“' '”' "‘" "’";
-	&:lang(en) { quotes: '“' '”' "‘" "’"; }
-	&:lang(nl) { quotes: '“' '”' "‘" "’"; }
-	&:lang(de) { quotes: "„" "“" '‚' '‘'; }
-	&:lang(fr) { quotes: "«" "»" '‹' '›'; }
-	&:lang(hu) { quotes: "„" "“" '»' '«'; }
-	&:lang(jp) { quotes: "「" "」" '『' '』'; }
-	&:lang(zh) { quotes: "「" "」" '『' '』'; } // Traditional Chinese (e.g. Taiwan, Hong Kong); better language code: zh_HANT or zh_CN
-	// &:lang(zh), blockquote:lang(zh) p { quotes: '“' '”' "‘" "’"; } // Simplified Chinese (e.g. mainland China, Singapore); better language code: zh_HANS or zh_TW (from Taiwan)
+	quotes: ‘”’ ‘”’ “’” “’”;
+
+	&:before { content: open-quote; }
+	&:after { content: close-quote; }
+	&:lang(en) { quotes: ‘”’ ‘”’ “’” “’”; }
+	&:lang(nl) { quotes: ‘”’ ‘”’ “’” “’”; }
+	&:lang(de) { quotes: “„” “”” ‘‚’ ‘’’; }
+	&:lang(fr) { quotes: “«” “»” ‘‹’ ‘›’; }
+	&:lang(hu) { quotes: “„” “”” ‘»’ ‘«’; }
+	&:lang(jp) { quotes: “「” “」” ‘『’ ‘』’; }
+	&:lang(zh) { quotes: “「” “」” ‘『’ ‘』’; } // Traditional Chinese (e.g. Taiwan, Hong Kong); better language code: zh_HANT or zh_CN
+	// &:lang(zh), blockquote:lang(zh) p { quotes: ‘”’ ‘”’ “’” “’”; } // Simplified Chinese (e.g. mainland China, Singapore); better language code: zh_HANS or zh_TW (from Taiwan)
 }
 
 /**
@@ -42,9 +43,6 @@
  */
 
 .blockquote {
-	@extend %text-bold;
-	@include responsive-text-size($text-gamma);
-
 	position: relative;
 	margin-top: page-rhythm(3);
 	margin-bottom: page-rhythm(3);
@@ -55,6 +53,9 @@
 	background-color: $color-gray-light;
 	border-radius: $border-radius;
 	line-height: 1.333;
+
+	@extend %text-bold;
+	@include responsive-text-size($text-gamma);
 
 	// &::before {
 	// 	content: '“';

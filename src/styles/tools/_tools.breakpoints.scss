@@ -16,12 +16,14 @@
 // }
 // --------------------------------------------------------------------------
 
+@use 'sass:map';
+@use '../settings/settings.breakpoints' as *;
 
 @mixin breakpoint($breakpoint-name, $max-width: false) {
 
 	// Check if breakpoint name is valid (exists in `$breakpoints` list)
-	@if map-get($breakpoints, $breakpoint-name) != null {
-			$breakpoint-value: map-get($breakpoints, $breakpoint-name);
+	@if map.get($breakpoints, $breakpoint-name) != null {
+			$breakpoint-value: map.get($breakpoints, $breakpoint-name);
 
 			@if $breakpoint-value != null {
 				@if $max-width == 'max' {

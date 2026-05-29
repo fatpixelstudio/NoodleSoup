@@ -1,36 +1,9 @@
+@use '../config' as *;
+@use '../utilities/utilities.text' as *;
+
 /* ==========================================================================
    Headings
    ========================================================================== */
-
-/**
- * Shared heading settings
- *
- * 1. Enables font kerning in all browsers:
- *
- * - http://blog.typekit.com/2014/02/05/kerning-on-the-web/
- * - http://bocoup.com/weblog/text-rendering/
- *
- * The text-rendering options are: `auto` (default), `optimizeLegibility` and
- * `optimizeSpeed`. Be careful with the `optimizeLegibility` setting, because
- * it can be really slow and bog down an entire page. For now best to only
- * apply to bigger headings if using at all.
- */
-
-%heading-settings {
-	font-weight: normal;
-	hanging-punctuation: first;
-	// letter-spacing: .02rem;
-}
-
-%heading-font {
-	font-family: $heading-web-font-stack;
-	font-weight: normal;
-}
-
-%heading-font-bold {
-	font-family: $heading-web-font-stack;
-	font-weight: bold;
-}
 
 /**
  * Heading sizes
@@ -39,8 +12,8 @@
 // .tera-heading {}
 // .giga-heading {}
 .mega-heading {
-	@extend %heading-settings;
-	@extend %heading-font;
+	@include heading-settings;
+	@include heading-font;
 	@extend %text-kern;
 	@extend %text-break;
 	@extend %text-hyphen;
@@ -50,8 +23,8 @@
 /* Alpha */
 
 .alpha-heading {
-	@extend %heading-settings;
-	@extend %heading-font;
+	@include heading-settings;
+	@include heading-font;
 	@extend %text-kern;
 	@extend %text-break;
 	@extend %text-hyphen;
@@ -61,8 +34,8 @@
 /* Beta */
 
 .beta-heading {
-	@extend %heading-settings;
-	@extend %heading-font;
+	@include heading-settings;
+	@include heading-font;
 	@extend %text-kern;
 	@extend %text-break;
 	@extend %text-hyphen;
@@ -72,7 +45,7 @@
 /* Gamma */
 
 .gamma-heading {
-	@extend %heading-settings;
+	@include heading-settings;
 	@extend %text-break;
 	@extend %text-hyphen;
 	@include responsive-text-size($text-gamma);
@@ -81,8 +54,8 @@
 /* Delta */
 
 .delta-heading {
-	@extend %heading-settings;
-	@extend %heading-font-bold;
+	@include heading-settings;
+	@include heading-font-bold;
 	@include responsive-text-size($text-delta);
 }
 
@@ -91,8 +64,8 @@
 
 .epsilon-heading,
 .zeta-heading {
-	@extend %heading-settings;
-	@extend %heading-font-bold;
+	@include heading-settings;
+	@include heading-font-bold;
 	@extend %text-break;
 	@extend %text-hyphen;
 	@include responsive-text-size($text-epsilon);
@@ -100,7 +73,7 @@
 
 .epsilon-sans-heading,
 .zeta-sans-heading {
-	@extend %heading-settings;
+	@include heading-settings;
 	@extend %text-bold;
 	@extend %text-break;
 	@extend %text-hyphen;

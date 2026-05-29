@@ -1,3 +1,6 @@
+@use '../config' as *;
+@use '../utilities/utilities.states' as *;
+
 /* ==========================================================================
    Nav
    ========================================================================== */
@@ -131,12 +134,12 @@
 
 .nav-main__item,
 .nav-main__list > li {
-	@extend %heading-font;
-	@include responsive-text-size($text-nav);
-
 	display: block;
 	color: $color-base-white;
 	border-bottom: 1px solid $color-base-black;
+
+	@include heading-font;
+	@include responsive-text-size($text-nav);
 
 	&:last-child {
 		border: none;

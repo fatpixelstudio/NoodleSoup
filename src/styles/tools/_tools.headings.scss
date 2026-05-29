@@ -1,0 +1,23 @@
+// --------------------------------------------------------------------------
+// Headings
+// --------------------------------------------------------------------------
+// Heading font and style mixins. Forward via config so all partials can
+// use these with a single `@use '../config' as *`.
+// --------------------------------------------------------------------------
+
+@use '../settings/settings.typography' as *;
+
+@mixin heading-settings {
+	font-weight: normal;
+	hanging-punctuation: first;
+}
+
+@mixin heading-font {
+	font-family: $heading-web-font-stack;
+	font-weight: normal;
+}
+
+@mixin heading-font-bold {
+	font-family: $heading-web-font-stack;
+	font-weight: bold;
+}

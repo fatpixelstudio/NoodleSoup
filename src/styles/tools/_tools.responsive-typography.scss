@@ -14,6 +14,14 @@
 //   @include responsive-base-text();
 // }
 
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:meta';
+@use './tools.breakpoints' as *;
+@use './tools.font-size' as *;
+@use '../settings/settings.breakpoints' as *;
+@use '../settings/settings.typography' as *;
+
 @mixin responsive-base-text($target-map: $text-sizes, $breakpoints: $breakpoints) {
 	@include responsive-text-size($target-map, $breakpoints, $text-sizes, true, $fluid: false);
 }
@@ -45,21 +53,21 @@
 	$typi-map: (target: $target-map, breakpoints: $breakpoints, text-sizes: $text-sizes, base: $base, rem: $rem);
 
 	@each $breakpoint-key, $font-bp-val in $target-map {
-		$typi-map: map-merge($typi-map, (breakpoint: $breakpoint-key));
+		$typi-map: map.merge($typi-map, (breakpoint: $breakpoint-key));
 
 		@if $breakpoint-key == null {
 			@include responsive-text-properties($typi-map);
 		}
 		// If there is a corresponding `$text-sizes` key for current `$breakpoint-key` in `$breakpoints` map
-		@else if map-has-key($breakpoints, $breakpoint-key) {
+		@else if map.has-key($breakpoints, $breakpoint-key) {
 
 			// If fluid (base) text is true
 			@if $fluid == true {
-				$min-bp-key: nth(nth($text-sizes, 2), 1);
-				$max-bp-key: nth(nth($text-sizes, -1), 1);
+				$min-bp-key: list.nth(list.nth($text-sizes, 2), 1);
+				$max-bp-key: list.nth(list.nth($text-sizes, -1), 1);
 
 				// If a line-height is defined in `$text-sizes` map for current `$breakpoint-key`
-				@if type-of($font-bp-val) == "list" and length($font-bp-val) > 1 {
+				@if meta.type-of($font-bp-val) == "list" and list.length($font-bp-val) > 1 {
 
 					// If `$breakpoint-key` is the smallest key in `$breakpoints` map
 					@if $breakpoint-key == $min-bp-key {
@@ -104,10 +112,8 @@
 // Allows use of breakpoint mixin.
 
 @mixin responsive-text-breakpoint($typi-map, $fluid: false, $line-height-only: false) {
-	$target: map-get($typi-map, target);
-	$breakpoint-key: map-get($typi-map, breakpoint);
-	// $breakpoints: map-get($typi-map, breakpoints);
-	// $font-bp-val: map-get($target, $breakpoint-key);
+	$target: map.get($typi-map, target);
+	$breakpoint-key: map.get($typi-map, breakpoint);
 
 	@include breakpoint($breakpoint-key) {
 		@include responsive-text-properties($typi-map, $fluid, $line-height-only);
@@ -119,21 +125,21 @@
 // Writes (viewport unit based) font-size (and line height) properties
 
 @mixin responsive-text-properties($typi-map, $fluid: false, $line-height-only: false) {
-	$target: map-get($typi-map, target);
-	$breakpoint-key: map-get($typi-map, breakpoint);
+	$target: map.get($typi-map, target);
+	$breakpoint-key: map.get($typi-map, breakpoint);
 
-	$text-sizes: map-get($typi-map, text-sizes);
-	$rem: map-get($typi-map, rem);
-	$base: map-get($typi-map, base);
+	$text-sizes: map.get($typi-map, text-sizes);
+	$rem: map.get($typi-map, rem);
+	$base: map.get($typi-map, base);
 
-	$font-bp-val: map-get($target, $breakpoint-key);
+	$font-bp-val: map.get($target, $breakpoint-key);
 
 	$font-size: null;
 	$line-height: null;
 
-	@if type-of($font-bp-val) == "list" and length($font-bp-val) > 1 {
-		$font-size: nth($font-bp-val, 1);
-		$line-height: nth($font-bp-val, 2);
+	@if meta.type-of($font-bp-val) == "list" and list.length($font-bp-val) > 1 {
+		$font-size: list.nth($font-bp-val, 1);
+		$line-height: list.nth($font-bp-val, 2);
 
 		@if $line-height-only == false {
 			@if $fluid == true {
@@ -158,4 +164,3 @@
 		}
 	}
 }
-

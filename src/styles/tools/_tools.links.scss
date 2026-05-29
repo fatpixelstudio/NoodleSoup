@@ -1,0 +1,25 @@
+// --------------------------------------------------------------------------
+// Links
+// --------------------------------------------------------------------------
+// Link style mixins. Forward via config so all partials can use these with
+// a single `@use '../config' as *`.
+// --------------------------------------------------------------------------
+
+@use '../settings/settings.colors' as *;
+
+@mixin link-style($color: $color-base-black) {
+	text-decoration: underline;
+
+	&:hover {
+		color: $color;
+		transition: color .24s ease-out;
+	}
+}
+
+@mixin link-style-fluppel($color: $color-base-black) {
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-color: $color;
+	text-underline-offset: 6px;
+	text-decoration-skip-ink: auto;
+}

@@ -1,105 +1,78 @@
-@use 'sass:math';
-
 // --------------------------------------------------------------------------
-// [1] Tools
-// --------------------------------------------------------------------------
-// Site-wide mixins and functions.
-// --------------------------------------------------------------------------
-
-@import 'tools/tools.breakpoints';
-@import 'tools/tools.colors';
-@import 'tools/tools.font-size';
-@import 'tools/tools.responsive-typography';
-@import 'tools/tools.rhythm';
-
-// --------------------------------------------------------------------------
-// [2] Settings
-// --------------------------------------------------------------------------
-// Global variables, site-wide settings, config switches, etc.
-// --------------------------------------------------------------------------
-
-@import 'settings/settings.breakpoints';
-@import 'settings/settings.colors';
-@import 'settings/settings.grid';
-@import 'settings/settings.page';
-@import 'settings/settings.typography';
-@import 'settings/settings.z-indexes';
-
-// --------------------------------------------------------------------------
-// [3] Generic
+// [1] Generic
 // --------------------------------------------------------------------------
 // Low-specificity, far-reaching rulesets (e.g. resets).
 // --------------------------------------------------------------------------
 
-@import 'generic/generic.normalize';
-@import 'generic/generic.foundation';
-@import 'generic/generic.text-selection';
+@use 'generic/generic.normalize' as *;
+@use 'generic/generic.foundation' as *;
+@use 'generic/generic.text-selection' as *;
 
 // --------------------------------------------------------------------------
-// [4] Base
+// [2] Base
 // --------------------------------------------------------------------------
 // Basic HTML elements (e.g. links, images, lists, headings).
 // --------------------------------------------------------------------------
 
-@import 'base/base.page';
-@import 'base/base.copy';
-@import 'base/base.headings';
-@import 'base/base.images';
-@import 'base/base.links';
-@import 'base/base.lists';
-@import 'base/base.quotes';
-@import 'base/base.rulers';
-@import 'base/base.tables';
+@use 'base/base.page' as *;
+@use 'base/base.copy' as *;
+@use 'base/base.headings' as *;
+@use 'base/base.images' as *;
+@use 'base/base.links' as *;
+@use 'base/base.lists' as *;
+@use 'base/base.quotes' as *;
+@use 'base/base.rulers' as *;
+@use 'base/base.tables' as *;
 
 // --------------------------------------------------------------------------
-// [5] Objects
+// [3] Objects
 // --------------------------------------------------------------------------
 // Objects, abstractions, and design patterns (e.g. .button {}, .grid {}).
 // --------------------------------------------------------------------------
 
-@import 'objects/objects.block-link';
-@import 'objects/objects.buttons';
-@import 'objects/objects.fluid-embeds';
-@import 'objects/objects.forms';
-@import 'objects/objects.grids';
+@use 'objects/objects.block-link' as *;
+@use 'objects/objects.buttons' as *;
+@use 'objects/objects.fluid-embeds' as *;
+@use 'objects/objects.forms' as *;
+@use 'objects/objects.grids' as *;
 
 // --------------------------------------------------------------------------
-// [6] Components
+// [4] Components
 // --------------------------------------------------------------------------
 // Complete chunks of UI (e.g. .accordion {}).
 // --------------------------------------------------------------------------
 
-@import 'components/components.alerts';
-@import 'components/components.backdrops';
-@import 'components/components.banners';
-@import 'components/components.footers';
-@import "components/components.masthead";
-@import "components/components.navigation";
-@import "components/components.oldie-message";
+@use 'components/components.alerts' as *;
+@use 'components/components.backdrops' as *;
+@use 'components/components.banners' as *;
+@use 'components/components.footers' as *;
+@use 'components/components.masthead' as *;
+@use 'components/components.navigation' as *;
+@use 'components/components.oldie-message' as *;
 
 // --------------------------------------------------------------------------
-// [7] Utilities
+// [5] Utilities
 // --------------------------------------------------------------------------
 // High-specificity, very explicit selectors. Overrides and helper
 // classes (e.g. .is-hidden-visually {}).
 // --------------------------------------------------------------------------
 
-@import 'utilities/utilities.aligner';
-@import 'utilities/utilities.clearfix';
-@import 'utilities/utilities.contain';
-@import 'utilities/utilities.skip-links';
-@import 'utilities/utilities.spacing';
-@import 'utilities/utilities.states';
-@import 'utilities/utilities.text';
+@use 'utilities/utilities.aligner' as *;
+@use 'utilities/utilities.clearfix' as *;
+@use 'utilities/utilities.contain' as *;
+@use 'utilities/utilities.skip-links' as *;
+@use 'utilities/utilities.spacing' as *;
+@use 'utilities/utilities.states' as *;
+@use 'utilities/utilities.text' as *;
 
 // --------------------------------------------------------------------------
-// [8] Custom (web) fonts
+// [6] Custom (web) fonts
 // --------------------------------------------------------------------------
 
-@import "../fonts/roboto/roboto";
+@use '../fonts/roboto/roboto' as *;
 
 // --------------------------------------------------------------------------
-// [9] Custom libraries
+// [7] Custom libraries
 // --------------------------------------------------------------------------
 
 // @import '../../node_modules/something';

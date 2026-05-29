@@ -1,6 +1,6 @@
-/*!*****************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.styles.scss ***!
-  \*****************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./src/styles/main.styles.scss ***!
+  \*********************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 /* ==========================================================================
    Reset
@@ -465,8 +465,6 @@ button,
  * 6. Ensure the page always fills at least the entire height of the viewport.
  */
 html {
-  font-size: 100%;
-  line-height: 1.56;
   position: relative;
   height: 100%;
   overflow-y: auto;
@@ -479,6 +477,8 @@ html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+  line-height: 1.56;
 }
 @media (min-width: 20em) {
   html {
@@ -539,148 +539,128 @@ html {
 }
 
 /* ==========================================================================
-   Copy
+   Text (https://github.com/suitcss/utils-text)
    ========================================================================== */
 /**
- * Scoped styles of blocks of (body) content
+ * Kerning
+ *
+ * Enables font kerning in all browsers:
+ * http://blog.typekit.com/2014/02/05/kerning-on-the-web/
+ *
+ * Text rendering: http://bocoup.com/weblog/text-rendering/
+ *
+ * The text-rendering options are: `auto` (default), `optimizeLegibility` and
+ * `optimizeSpeed`. Be careful with the `optimizeLegibility` setting, because
+ * it can be really slow and bog down an entire page. For now best to only
+ * apply to bigger headings if using at all.
+ *
+ * Support:
+ * 1. Chrome (not Windows), Firefox, Safari 6+, iOS, Android
+ * 2. Chrome (not Windows), Firefox, IE 10+
+ * 3. Safari 7 and future browsers
  */
-.copy {
-  /* Margins
-  ========================================================================== */
-  /* Paragraphs
-     ========================================================================== */
-  /* Headings
-     ========================================================================== */
-  /* Scoped headings (see extend-selectors.scss for corresponding 'unscoped' classes) */
-  /* Figures
-     ========================================================================== */
-  /* Pull, block- and run-in quotes
-     ========================================================================== */
-  /* Inline Elements
-     ========================================================================== */
-  /* Lists
-     ========================================================================== */
-  /* Unordered lists */
-  /* Definition lists */
-  /* Links
-     ========================================================================== */
-  /* External page links */
-  /* Secure link */
-  /* PDF link */
-  /* Email link */
-  /* Twitter link */
-  /* Tables
-     ========================================================================== */
-  /* Buttons
-     ========================================================================== */
+.mega-heading, .alpha-heading, .beta-heading, .copy h1 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
 }
-.copy--max {
-  max-width: 52rem;
+
+/**
+ * Hanging punctuation
+ *
+ * Enables hanging punctuation to put some punctuation characters from
+ * start of text elements "outside" of the box.
+ *
+ * https://css-tricks.com/almanac/properties/h/hanging-punctuation/
+ */
+.copy p {
+  hanging-punctuation: first;
 }
-.copy p,
-.copy ul,
-.copy ol,
-.copy dl {
-  margin-bottom: 1.56rem;
+
+/**
+ * Justify, hyphenate and word breaking
+ *
+ * Use justify text always in combination with text hyphenate and
+ * word breaking (%text-break).
+ *
+ * Word breaking break strings when their length exceeds the width of
+ * their container.
+ *
+ * For more about hyphenate and word breaking see: http://bit.ly/JixVfL
+ */
+@media (max-width: 32em) {
+  :lang(en) .mega-heading, :lang(en) .alpha-heading, :lang(en) .beta-heading, :lang(en) .gamma-heading, :lang(en) .epsilon-heading,
+  :lang(en) .zeta-heading, :lang(en) .epsilon-sans-heading,
+  :lang(en) .zeta-sans-heading, :lang(en) .copy h1, .copy :lang(en) h1, :lang(en) .copy h2, .copy :lang(en) h2, :lang(en) .copy h4, .copy :lang(en) h4,
+  :lang(en) .copy h5,
+  .copy :lang(en) h5,
+  :lang(en) .copy h6,
+  .copy :lang(en) h6 {
+    -ms-hyphens: auto;
+        hyphens: auto;
+  }
 }
-.copy p:last-child,
-.copy ul:last-child,
-.copy ol:last-child,
-.copy dl:last-child {
-  margin-bottom: 0;
+
+.mega-heading, .alpha-heading, .beta-heading, .gamma-heading, .epsilon-heading,
+.zeta-heading, .epsilon-sans-heading,
+.zeta-sans-heading, .copy h1, .copy h2, .copy h4,
+.copy h5,
+.copy h6 {
+  word-wrap: break-word;
 }
-.copy h2 {
-  margin-top: 3.12rem;
-  margin-bottom: 0.39rem;
+
+/**
+ * Text truncation
+ *
+ * Prevent text from wrapping onto multiple lines, and truncate with an
+ * ellipsis.
+ *
+ * 1. Ensure that the node has a maximum width after which truncation can
+ *    occur.
+ * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
+ *    nodes.
+ */
+/**
+ * Inline elements
+ */
+.copy b,
+.copy strong, .blockquote, .copy blockquote,
+.copy .blockquote,
+.copy .wp-block-quote, .epsilon-sans-heading,
+.zeta-sans-heading {
+  font-weight: bold;
 }
-.copy h3 {
-  margin-top: 3.12rem;
+
+.copy i,
+.copy em,
+.copy cite,
+.copy dfn,
+.copy var {
+  font-style: italic;
 }
-.copy ins {
-  background-color: rgb(253, 254, 206);
+
+.copy small {
+  font-size: 0.889rem;
+}
+
+.copy mark {
+  background-color: rgb(248, 248, 0);
   color: rgb(0, 0, 0);
-  text-decoration: underline;
-  -webkit-text-decoration-color: rgb(198.68, 199.56, 200.88);
-          text-decoration-color: rgb(198.68, 199.56, 200.88);
-}
-.copy del {
-  background-color: rgb(248, 0, 0);
-  color: rgb(0, 0, 0);
-}
-.copy abbr {
-  letter-spacing: 0.02rem;
-  font-variant: small-caps;
-  text-transform: lowercase;
-  font-size: 112%;
-}
-.copy abbr[title] {
-  border: none;
-  text-decoration: none;
-  cursor: help;
-  border-bottom: 1px dotted rgb(0, 0, 0);
-}
-.copy code,
-.copy kbd,
-.copy pre,
-.copy samp {
-  font-family: Monaco, "Courier New", "CourierNewPSMT", Courier, monospace, serif;
-}
-.copy code {
-  background-color: rgb(244, 244, 244);
-}
-.copy dt {
-  font-weight: 700;
-}
-.copy dd {
-  margin-left: 1.56rem;
-}
-.copy .wp-block-button__link:hover, .copy .wp-block-button__link:focus, .copy .wp-block-button__link:active {
-  color: rgb(255, 255, 255) !important;
 }
 
 /* ==========================================================================
    Headings
    ========================================================================== */
 /**
- * Shared heading settings
- *
- * 1. Enables font kerning in all browsers:
- *
- * - http://blog.typekit.com/2014/02/05/kerning-on-the-web/
- * - http://bocoup.com/weblog/text-rendering/
- *
- * The text-rendering options are: `auto` (default), `optimizeLegibility` and
- * `optimizeSpeed`. Be careful with the `optimizeLegibility` setting, because
- * it can be really slow and bog down an entire page. For now best to only
- * apply to bigger headings if using at all.
- */
-.epsilon-sans-heading,
-.zeta-sans-heading, .epsilon-heading, .copy h4,
-.zeta-heading,
-.copy h5,
-.copy h6, .delta-heading, .copy h3, .gamma-heading, .copy h2, .beta-heading, .copy h1, .alpha-heading, .mega-heading {
-  font-weight: normal;
-  hanging-punctuation: first;
-}
-
-.nav-main__item,
-.nav-main__list > li, .beta-heading, .copy h1, .alpha-heading, .mega-heading {
-  font-family: "Roboto", "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
-  font-weight: normal;
-}
-
-.epsilon-heading, .copy h4,
-.zeta-heading,
-.copy h5,
-.copy h6, .delta-heading, .copy h3 {
-  font-family: "Roboto", "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
-  font-weight: bold;
-}
-
-/**
  * Heading sizes
  */
 .mega-heading {
+  font-weight: normal;
+  hanging-punctuation: first;
+  font-family: "Roboto", "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
+  font-weight: normal;
   font-size: 3rem;
   line-height: 1.222;
 }
@@ -693,6 +673,10 @@ html {
 
 /* Alpha */
 .alpha-heading {
+  font-weight: normal;
+  hanging-punctuation: first;
+  font-family: "Roboto", "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
+  font-weight: normal;
   font-size: 2.75rem;
   line-height: 1.222;
 }
@@ -704,6 +688,10 @@ html {
 
 /* Beta */
 .beta-heading, .copy h1 {
+  font-weight: normal;
+  hanging-punctuation: first;
+  font-family: "Roboto", "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
+  font-weight: normal;
   font-size: 2rem;
   line-height: 1.154;
 }
@@ -720,6 +708,8 @@ html {
 
 /* Gamma */
 .gamma-heading, .copy h2 {
+  font-weight: normal;
+  hanging-punctuation: first;
   font-size: 1.5rem;
   line-height: 1.142;
 }
@@ -731,6 +721,10 @@ html {
 
 /* Delta */
 .delta-heading, .copy h3 {
+  font-weight: normal;
+  hanging-punctuation: first;
+  font-family: "Roboto", "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
+  font-weight: bold;
   font-size: 1.25rem;
 }
 
@@ -739,6 +733,10 @@ html {
 .zeta-heading,
 .copy h5,
 .copy h6 {
+  font-weight: normal;
+  hanging-punctuation: first;
+  font-family: "Roboto", "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
+  font-weight: bold;
   font-size: 1rem;
 }
 @media (min-width: 64em) {
@@ -752,6 +750,8 @@ html {
 
 .epsilon-sans-heading,
 .zeta-sans-heading {
+  font-weight: normal;
+  hanging-punctuation: first;
   font-size: 1rem;
 }
 @media (min-width: 64em) {
@@ -762,118 +762,138 @@ html {
 }
 
 /* ==========================================================================
-   Images
+   Quotes
    ========================================================================== */
-.image-placeholder {
-  display: block;
-  width: 100%;
-  height: 0;
-  padding-top: 0.6;
+/**
+ * Quote (run-in quote)
+ */
+.quote {
+  /**
+   * Quotes pairs for two levels in multiple languages
+   * http://nirusu.me/articles/quote-tag
+   */
+  quotes: ‘”’ ‘”’ “’” “’”;
+}
+.quote:before {
+  content: open-quote;
+}
+.quote:after {
+  content: close-quote;
+}
+.quote:lang(en) {
+  quotes: ‘”’ ‘”’ “’” “’”;
+}
+.quote:lang(nl) {
+  quotes: ‘”’ ‘”’ “’” “’”;
+}
+.quote:lang(de) {
+  quotes: “„” “”” ‘‚’ ‘’’;
+}
+.quote:lang(fr) {
+  quotes: “«” “»” ‘‹’ ‘›’;
+}
+.quote:lang(hu) {
+  quotes: “„” “”” ‘»’ ‘«’;
+}
+.quote:lang(jp) {
+  quotes: “「” “」” ‘『’ ‘』’;
+}
+.quote:lang(zh) {
+  quotes: “「” “」” ‘『’ ‘』’;
+}
+
+/**
+ * Blockquote
+ *
+ * A block quotation (also known as a long quotation or extract) is a quotation
+ * in a written document, that is set off from the main text as a paragraph, or
+ * block of text, and typically distinguished visually using indentation and a
+ * different typeface or smaller size quotation. (This is in contrast to a
+ * setting it off with quotation marks in a run-in quote.)
+ * Block quotations are used for the long quotation. The Chicago Manual of Style
+ * recommends using a block quotation when extracted text is 100 words or more,
+ * or at least eight lines.
+ */
+.blockquote, .copy blockquote,
+.copy .blockquote,
+.copy .wp-block-quote {
+  position: relative;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  padding: 36px;
+  quotes: none;
+  text-align: left;
   background-color: rgb(167.96, 169.32, 171.36);
+  border-radius: 16px;
+  line-height: 1.333;
+  font-size: 1.5rem;
+  line-height: 1.142;
 }
-
-/**
- * Reset 1em 40px margin from figure, set in normalize.css
- */
-figure {
-  margin: 0;
-}
-
-/**
- * Fluid images
- */
-img {
-  max-width: 100%;
-  height: auto;
-  border: 0;
-}
-
-/**
- * Images in `figure` elements
- */
-figure > img {
-  display: block;
-}
-
-/**
- * Google Maps breaks if `max-width: 100%` acts upon it; use their selector
- * to remove the effects.
- */
-.gm-style img {
-  max-width: none;
-}
-
-/**
- * Wordpress image aligns
- */
-.copy .alignleft {
-  float: left;
-  margin-top: 1.56rem;
-  margin-right: 1.56rem;
-  margin-bottom: 0.78rem;
-}
-.copy .alignright {
-  float: right;
-  margin-top: 1.56rem;
-  margin-left: 1.56rem;
-  margin-bottom: 0.78rem;
-}
-.copy .aligncenter {
-  display: block;
-  margin-top: 1.56rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-.copy .size-content-width-full {
-  width: 100%;
-}
-.copy .size-content-width-half {
-  width: 50%;
-}
-.copy .size-content-width-quarter {
-  width: 25%;
-}
-
-/**
- * Wordpress galleries
- */
-.copy .gallery {
-  margin-left: -8px !important;
-  margin-right: -8px !important;
-}
-.copy .gallery .gallery-item {
-  margin-top: 0 !important;
-}
-.copy .gallery .gallery-icon {
-  display: block;
-  overflow: hidden;
-  padding: 4px;
-}
-@media (min-width: 48em) {
-  .copy .gallery .gallery-icon {
-    padding: 8px 8px 2px 8px;
+@media (min-width: 64em) {
+  .blockquote, .copy blockquote,
+  .copy .blockquote,
+  .copy .wp-block-quote {
+    font-size: 1.5rem;
   }
 }
-.copy .gallery .gallery-icon a {
+.blockquote p, .copy blockquote p,
+.copy .blockquote p,
+.copy .wp-block-quote p {
   display: block;
 }
-.copy .gallery img {
-  border: 0 !important;
-  opacity: 1;
-  -webkit-transition: -webkit-transform 0.24s ease-out;
-  transition: -webkit-transform 0.24s ease-out;
-  transition: transform 0.24s ease-out;
-  transition: transform 0.24s ease-out, -webkit-transform 0.24s ease-out;
+.blockquote cite, .copy blockquote cite,
+.copy .blockquote cite,
+.copy .wp-block-quote cite {
+  font-size: 0.889rem;
+  display: block;
+  margin-top: 0.78rem;
+  font-style: normal;
 }
-.copy .gallery .gallery-icon:hover img {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+.blockquote figcaption:before, .copy blockquote figcaption:before,
+.copy .blockquote figcaption:before,
+.copy .wp-block-quote figcaption:before {
+  content: "— ";
+}
+
+/**
+ * Pull quote
+ *
+ * Also known as a lift-out quote --- is a quotation
+ * or excerpt from an article that is typically placed in a larger or distinctive
+ * typeface on the same page (http://en.wikipedia.org/wiki/Pull_quote)
+ *
+ * Example HTML:
+ * <aside class="Pullquote">
+ *   <blockquote>It is the unofficial force---the Baker Street irregulars.</blockquote>
+ * </aside>
+ */
+.pullquote {
+  display: block;
+  width: 100%;
+  margin-top: 96px;
+  margin-bottom: 96px;
+  padding: 48px;
+  background-color: rgb(244, 244, 244);
+  color: rgb(0, 0, 0);
+  border-radius: 12px;
+}
+@media (min-width: 48em) {
+  .pullquote {
+    padding: 96px;
+  }
+}
+
+.pullquote__text {
+  display: block;
+}
+.pullquote__text p {
+  display: inline;
 }
 
 /* ==========================================================================
    Links
    ========================================================================== */
-.link:link, .list--links a:link, .copy a:link:not(.button) {
+.link:link, .copy a:link:not(.button), .list--links a:link {
   position: relative;
   -webkit-transition: color 0.24s ease-out;
   transition: color 0.24s ease-out;
@@ -883,13 +903,13 @@ figure > img {
           text-decoration-skip-ink: auto;
   color: inherit;
 }
-.link:visited, .list--links a:visited, .copy a:visited:not(.button) {
+.link:visited, .copy a:visited:not(.button), .list--links a:visited {
   color: inherit;
 }
-.link:hover, .list--links a:hover, .copy a:hover:not(.button), .link:focus, .list--links a:focus, .copy a:focus:not(.button) {
+.link:hover, .copy a:hover:not(.button), .list--links a:hover, .link:focus, .copy a:focus:not(.button), .list--links a:focus {
   color: rgb(0, 0, 0);
 }
-.link:active, .list--links a:active, .copy a:active:not(.button) {
+.link:active, .copy a:active:not(.button), .list--links a:active {
   color: rgb(0, 0, 0);
 }
 
@@ -986,155 +1006,6 @@ ol.list > li,
   }
 }
 
-/* ==========================================================================
-   Quotes
-   ========================================================================== */
-/**
- * Quote (run-in quote)
- */
-.quote {
-  quotes: none;
-  /**
-   * Quotes pairs for two levels in multiple languages
-   * http://nirusu.me/articles/quote-tag
-   */
-  quotes: "“" "”" "‘" "’";
-}
-.quote:before {
-  content: open-quote;
-}
-.quote:after {
-  content: close-quote;
-}
-.quote:lang(en) {
-  quotes: "“" "”" "‘" "’";
-}
-.quote:lang(nl) {
-  quotes: "“" "”" "‘" "’";
-}
-.quote:lang(de) {
-  quotes: "„" "“" "‚" "‘";
-}
-.quote:lang(fr) {
-  quotes: "«" "»" "‹" "›";
-}
-.quote:lang(hu) {
-  quotes: "„" "“" "»" "«";
-}
-.quote:lang(jp) {
-  quotes: "「" "」" "『" "』";
-}
-.quote:lang(zh) {
-  quotes: "「" "」" "『" "』";
-}
-
-/**
- * Blockquote
- *
- * A block quotation (also known as a long quotation or extract) is a quotation
- * in a written document, that is set off from the main text as a paragraph, or
- * block of text, and typically distinguished visually using indentation and a
- * different typeface or smaller size quotation. (This is in contrast to a
- * setting it off with quotation marks in a run-in quote.)
- * Block quotations are used for the long quotation. The Chicago Manual of Style
- * recommends using a block quotation when extracted text is 100 words or more,
- * or at least eight lines.
- */
-.blockquote, .copy blockquote,
-.copy .blockquote,
-.copy .wp-block-quote {
-  font-size: 1.5rem;
-  line-height: 1.142;
-  position: relative;
-  margin-top: 48px;
-  margin-bottom: 48px;
-  padding: 36px;
-  quotes: none;
-  text-align: left;
-  background-color: rgb(167.96, 169.32, 171.36);
-  border-radius: 16px;
-  line-height: 1.333;
-}
-@media (min-width: 64em) {
-  .blockquote, .copy blockquote,
-  .copy .blockquote,
-  .copy .wp-block-quote {
-    font-size: 1.5rem;
-  }
-}
-.blockquote p, .copy blockquote p,
-.copy .blockquote p,
-.copy .wp-block-quote p {
-  display: block;
-}
-.blockquote cite, .copy blockquote cite,
-.copy .blockquote cite,
-.copy .wp-block-quote cite {
-  font-size: 0.889rem;
-  display: block;
-  margin-top: 0.78rem;
-  font-style: normal;
-}
-.blockquote figcaption:before, .copy blockquote figcaption:before,
-.copy .blockquote figcaption:before,
-.copy .wp-block-quote figcaption:before {
-  content: "— ";
-}
-
-/**
- * Pull quote
- *
- * Also known as a lift-out quote --- is a quotation
- * or excerpt from an article that is typically placed in a larger or distinctive
- * typeface on the same page (http://en.wikipedia.org/wiki/Pull_quote)
- *
- * Example HTML:
- * <aside class="Pullquote">
- *   <blockquote>It is the unofficial force---the Baker Street irregulars.</blockquote>
- * </aside>
- */
-.pullquote {
-  display: block;
-  width: 100%;
-  margin-top: 96px;
-  margin-bottom: 96px;
-  padding: 48px;
-  background-color: rgb(244, 244, 244);
-  color: rgb(0, 0, 0);
-  border-radius: 12px;
-}
-@media (min-width: 48em) {
-  .pullquote {
-    padding: 96px;
-  }
-}
-
-.pullquote__text {
-  display: block;
-}
-.pullquote__text p {
-  display: inline;
-}
-
-/* ==========================================================================
-   Horizontal ruler component
-   ========================================================================== */
-/**
- * Extends 'hr'.
- * Demo: jsfiddle.net/inuitcss/L6GuZ
- */
-hr {
-  margin-top: 2.34rem;
-  margin-bottom: 2.34rem;
-  margin-left: 0;
-  border: 0;
-  border-top: 1px solid rgb(0, 0, 0);
-}
-
-/* Dotted rules */
-/* Dashed rules */
-/* Ornamental rules. Places a § over the rule. */
-/* Activate horizontal ruler via @extend */
 /* ==========================================================================
    Tables
    ========================================================================== */
@@ -1242,52 +1113,6 @@ hr {
 }
 .table--bordered tfoot tr {
   border-top-width: 0.125em;
-}
-
-/* ==========================================================================
-   Block link
-   ========================================================================== */
-/**
- * Quasi-nested (post) links; e.g 'read more' links nested within a
- * block, while the whole block needs to be clickable.
- *
- * Example HTML:
- * <article class="block-link">
- *   <h2>Post title</h2>
- *   <p> ... </p>
- *   <a href="#" class="block-link__anchor">More</a>
- * </article>
- *
- * More on the class naming conventions: http://j.mp/H2b8ai
- */
-/* Post (block) link, used with a 'read more' link */
-.block-link {
-  position: relative;
-  z-index: inherit;
-  /*
-   * Position any links in the post excerpt at
-   * the top of the 'z-index' stack
-   */
-}
-.block-link a {
-  position: relative;
-  z-index: 3;
-}
-
-/**
- * Stretch the 'read more' link over the whole of the post
- * and hide the 'read more' link's text
- */
-a.block-link__anchor {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  display: block;
-  background: rgb(255, 255, 255);
-  opacity: 0;
 }
 
 /* ==========================================================================
@@ -1468,6 +1293,335 @@ a.block-link__anchor {
   border: none;
   background: transparent;
   color: inherit;
+}
+
+/* ==========================================================================
+   Copy
+   ========================================================================== */
+/**
+ * Scoped styles of blocks of (body) content
+ */
+.copy {
+  /* Margins
+  ========================================================================== */
+  /* Paragraphs
+     ========================================================================== */
+  /* Headings
+     ========================================================================== */
+  /* Scoped headings (see extend-selectors.scss for corresponding 'unscoped' classes) */
+  /* Figures
+     ========================================================================== */
+  /* Pull, block- and run-in quotes
+     ========================================================================== */
+  /* Inline Elements
+     ========================================================================== */
+  /* Lists
+     ========================================================================== */
+  /* Unordered lists */
+  /* Definition lists */
+  /* Links
+     ========================================================================== */
+  /* External page links */
+  /* Secure link */
+  /* PDF link */
+  /* Email link */
+  /* Twitter link */
+  /* Tables
+     ========================================================================== */
+  /* Buttons
+     ========================================================================== */
+}
+.copy--max {
+  max-width: 52rem;
+}
+.copy p,
+.copy ul,
+.copy ol,
+.copy dl {
+  margin-bottom: 1.56rem;
+}
+.copy p:last-child,
+.copy ul:last-child,
+.copy ol:last-child,
+.copy dl:last-child {
+  margin-bottom: 0;
+}
+.copy h2 {
+  margin-top: 3.12rem;
+  margin-bottom: 0.39rem;
+}
+.copy h3 {
+  margin-top: 3.12rem;
+}
+.copy ins {
+  background-color: rgb(253, 254, 206);
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+  -webkit-text-decoration-color: rgb(198.68, 199.56, 200.88);
+          text-decoration-color: rgb(198.68, 199.56, 200.88);
+}
+.copy del {
+  background-color: rgb(248, 0, 0);
+  color: rgb(0, 0, 0);
+}
+.copy abbr {
+  letter-spacing: 0.02rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-size: 112%;
+}
+.copy abbr[title] {
+  border: none;
+  text-decoration: none;
+  cursor: help;
+  border-bottom: 1px dotted rgb(0, 0, 0);
+}
+.copy code,
+.copy kbd,
+.copy pre,
+.copy samp {
+  font-family: Monaco, "Courier New", "CourierNewPSMT", Courier, monospace, serif;
+}
+.copy code {
+  background-color: rgb(244, 244, 244);
+}
+.copy dt {
+  font-weight: 700;
+}
+.copy dd {
+  margin-left: 1.56rem;
+}
+.copy .wp-block-button__link:hover, .copy .wp-block-button__link:focus, .copy .wp-block-button__link:active {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* ==========================================================================
+   Images
+   ========================================================================== */
+.image-placeholder {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 0.6;
+  background-color: rgb(167.96, 169.32, 171.36);
+}
+
+/**
+ * Reset 1em 40px margin from figure, set in normalize.css
+ */
+figure {
+  margin: 0;
+}
+
+/**
+ * Fluid images
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+/**
+ * Images in `figure` elements
+ */
+figure > img {
+  display: block;
+}
+
+/**
+ * Google Maps breaks if `max-width: 100%` acts upon it; use their selector
+ * to remove the effects.
+ */
+.gm-style img {
+  max-width: none;
+}
+
+/**
+ * Wordpress image aligns and captions
+ */
+.copy .alignleft {
+  float: left;
+  margin-top: 1.56rem;
+  margin-right: 1.56rem;
+  margin-bottom: 0.78rem;
+}
+.copy .alignright {
+  float: right;
+  margin-top: 1.56rem;
+  margin-left: 1.56rem;
+  margin-bottom: 0.78rem;
+}
+.copy .aligncenter {
+  display: block;
+  margin-top: 1.56rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.copy .size-content-width-full {
+  width: 100%;
+}
+.copy .size-content-width-half {
+  width: 50%;
+}
+.copy .size-content-width-quarter {
+  width: 25%;
+}
+.copy .wp-caption {
+  max-width: 100% !important;
+  width: auto !important;
+}
+.copy .wp-caption img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.copy .wp-caption-text {
+  font-size: 0.889rem;
+  margin-top: 0.78rem;
+  margin-bottom: 1.56rem !important;
+}
+
+/**
+ * Wordpress galleries
+ */
+.copy .gallery {
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+.copy .gallery .gallery-item {
+  margin-top: 0 !important;
+}
+.copy .gallery .gallery-icon {
+  display: block;
+  overflow: hidden;
+  padding: 4px;
+}
+@media (min-width: 48em) {
+  .copy .gallery .gallery-icon {
+    padding: 8px 8px 2px 8px;
+  }
+}
+.copy .gallery .gallery-icon a {
+  display: block;
+}
+.copy .gallery img {
+  border: 0 !important;
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.24s ease-out;
+  transition: -webkit-transform 0.24s ease-out;
+  transition: transform 0.24s ease-out;
+  transition: transform 0.24s ease-out, -webkit-transform 0.24s ease-out;
+}
+.copy .gallery .gallery-icon:hover img {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+/* ==========================================================================
+   Horizontal ruler component
+   ========================================================================== */
+/**
+ * Extends 'hr'.
+ * Demo: jsfiddle.net/inuitcss/L6GuZ
+ */
+hr {
+  margin-top: 2.34rem;
+  margin-bottom: 2.34rem;
+  margin-left: 0;
+  border: 0;
+  border-top: 1px solid rgb(0, 0, 0);
+}
+
+/* Dotted rules */
+/* Dashed rules */
+/* Ornamental rules. Places a § over the rule. */
+/* Activate horizontal ruler via @extend */
+/* ==========================================================================
+   States (https://github.com/suitcss/utils-state)
+   ========================================================================== */
+/**
+ * Completely remove from the flow and screen readers.
+ */
+/**
+ * Completely remove from the flow but leave available to screen readers.
+ */
+.is-hidden-visually,
+.nav-main-toggle__label,
+.masthead__label {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+}
+
+/**
+ * Control visibility without affecting flow.
+ *
+ * And use for nice trick: http://j.mp/1qhPKiU
+ */
+/**
+ * Hide text (use for image replacement).
+ */
+a.block-link__anchor {
+  background-color: transparent !important;
+  border: 0 !important;
+  overflow: hidden !important;
+}
+a.block-link__anchor:before {
+  content: "" !important;
+  display: block !important;
+  width: 0 !important;
+  height: 100% !important;
+}
+
+/* ==========================================================================
+   Block link
+   ========================================================================== */
+/**
+ * Quasi-nested (post) links; e.g 'read more' links nested within a
+ * block, while the whole block needs to be clickable.
+ *
+ * Example HTML:
+ * <article class="block-link">
+ *   <h2>Post title</h2>
+ *   <p> ... </p>
+ *   <a href="#" class="block-link__anchor">More</a>
+ * </article>
+ *
+ * More on the class naming conventions: http://j.mp/H2b8ai
+ */
+/* Post (block) link, used with a 'read more' link */
+.block-link {
+  position: relative;
+  z-index: inherit;
+  /*
+   * Position any links in the post excerpt at
+   * the top of the 'z-index' stack
+   */
+}
+.block-link a {
+  position: relative;
+  z-index: 3;
+}
+
+/**
+ * Stretch the 'read more' link over the whole of the post
+ * and hide the 'read more' link's text
+ */
+a.block-link__anchor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  background: rgb(255, 255, 255);
+  opacity: 0;
 }
 
 /* ==========================================================================
@@ -2167,10 +2321,12 @@ a.block-link__anchor {
 /* Stacked (vertical) nav */
 .nav-main__item,
 .nav-main__list > li {
-  font-size: 1.5rem;
   display: block;
   color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(0, 0, 0);
+  font-family: "Roboto", "Helvetica Neue Bold", "HelveticaNeue-Bold", "Helvetica Bold", "Helvetica-Bold", "Arial Bold", Arial-BoldMT, sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
 }
 @media (min-width: 64em) {
   .nav-main__item,
@@ -2490,7 +2646,7 @@ html.is-open-main-nav {
 .contain-width {
   margin-right: auto !important;
   margin-left: auto !important;
-  max-width: 57rem;
+  max-width: 70rem;
 }
 
 /* ==========================================================================
@@ -2581,159 +2737,6 @@ html.is-open-main-nav {
 .space-rhythm-xl {
   margin-top: 6.24rem;
   margin-bottom: 6.24rem !important;
-}
-
-/* ==========================================================================
-   States (https://github.com/suitcss/utils-state)
-   ========================================================================== */
-/**
- * Completely remove from the flow and screen readers.
- */
-/**
- * Completely remove from the flow but leave available to screen readers.
- */
-.is-hidden-visually,
-.masthead__label,
-.nav-main-toggle__label {
-  position: absolute !important;
-  overflow: hidden !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  padding: 0 !important;
-  width: 1px !important;
-  height: 1px !important;
-  border: 0 !important;
-}
-
-/**
- * Control visibility without affecting flow.
- *
- * And use for nice trick: http://j.mp/1qhPKiU
- */
-/**
- * Hide text (use for image replacement).
- */
-a.block-link__anchor {
-  background-color: transparent !important;
-  border: 0 !important;
-  overflow: hidden !important;
-}
-a.block-link__anchor:before {
-  content: "" !important;
-  display: block !important;
-  width: 0 !important;
-  height: 100% !important;
-}
-
-/* ==========================================================================
-   Text (https://github.com/suitcss/utils-text)
-   ========================================================================== */
-/**
- * Kerning
- *
- * Enables font kerning in all browsers:
- * http://blog.typekit.com/2014/02/05/kerning-on-the-web/
- *
- * Text rendering: http://bocoup.com/weblog/text-rendering/
- *
- * The text-rendering options are: `auto` (default), `optimizeLegibility` and
- * `optimizeSpeed`. Be careful with the `optimizeLegibility` setting, because
- * it can be really slow and bog down an entire page. For now best to only
- * apply to bigger headings if using at all.
- *
- * Support:
- * 1. Chrome (not Windows), Firefox, Safari 6+, iOS, Android
- * 2. Chrome (not Windows), Firefox, IE 10+
- * 3. Safari 7 and future browsers
- */
-.mega-heading, .alpha-heading, .beta-heading, .copy h1 {
-  text-rendering: optimizeLegibility;
-  -webkit-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
-}
-
-/**
- * Hanging punctuation
- *
- * Enables hanging punctuation to put some punctuation characters from
- * start of text elements "outside" of the box.
- *
- * https://css-tricks.com/almanac/properties/h/hanging-punctuation/
- */
-.copy p {
-  hanging-punctuation: first;
-}
-
-/**
- * Justify, hyphenate and word breaking
- *
- * Use justify text always in combination with text hyphenate and
- * word breaking (%text-break).
- *
- * Word breaking break strings when their length exceeds the width of
- * their container.
- *
- * For more about hyphenate and word breaking see: http://bit.ly/JixVfL
- */
-@media (max-width: 32em) {
-  :lang(en) .mega-heading, :lang(en) .alpha-heading, :lang(en) .beta-heading, :lang(en) .copy h1, .copy :lang(en) h1, :lang(en) .gamma-heading, :lang(en) .copy h2, .copy :lang(en) h2, :lang(en) .epsilon-heading, :lang(en) .copy h4, .copy :lang(en) h4,
-  :lang(en) .zeta-heading,
-  :lang(en) .copy h5,
-  .copy :lang(en) h5,
-  :lang(en) .copy h6,
-  .copy :lang(en) h6, :lang(en) .epsilon-sans-heading,
-  :lang(en) .zeta-sans-heading {
-    -ms-hyphens: auto;
-        hyphens: auto;
-  }
-}
-
-.mega-heading, .alpha-heading, .beta-heading, .copy h1, .gamma-heading, .copy h2, .epsilon-heading, .copy h4,
-.zeta-heading,
-.copy h5,
-.copy h6, .epsilon-sans-heading,
-.zeta-sans-heading {
-  word-wrap: break-word;
-}
-
-/**
- * Text truncation
- *
- * Prevent text from wrapping onto multiple lines, and truncate with an
- * ellipsis.
- *
- * 1. Ensure that the node has a maximum width after which truncation can
- *    occur.
- * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
- *    nodes.
- */
-/**
- * Inline elements
- */
-.copy b,
-.copy strong, .epsilon-sans-heading,
-.zeta-sans-heading, .blockquote, .copy blockquote,
-.copy .blockquote,
-.copy .wp-block-quote {
-  font-weight: bold;
-}
-
-.copy i,
-.copy em,
-.copy cite,
-.copy dfn,
-.copy var {
-  font-style: italic;
-}
-
-.copy small {
-  font-size: 0.889rem;
-}
-
-.copy mark {
-  background-color: rgb(248, 248, 0);
-  color: rgb(0, 0, 0);
 }
 
 /* roboto-regular - latin */

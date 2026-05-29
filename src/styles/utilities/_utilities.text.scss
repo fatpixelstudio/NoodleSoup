@@ -2,6 +2,12 @@
    Text (https://github.com/suitcss/utils-text)
    ========================================================================== */
 
+@use '../tools/tools.breakpoints' as *;
+@use '../tools/tools.responsive-typography' as *;
+@use '../settings/settings.breakpoints' as *;
+@use '../settings/settings.typography' as *;
+@use '../settings/settings.colors' as *;
+
 /**
  * Kerning
  *

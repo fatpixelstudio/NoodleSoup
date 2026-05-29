@@ -1,4 +1,5 @@
 const path = require('path');
+const __rootDir = __dirname;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier')
 var webpack = require('webpack');
@@ -18,7 +19,17 @@ module.exports = {
         MiniCssExtractPlugin.loader,
         'css-loader',
         'postcss-loader',
-        'sass-loader'
+        {
+          loader: 'sass-loader',
+          options: {
+            api: 'modern',
+            sassOptions: {
+              quietDeps: true,
+              loadPaths: [path.resolve(__rootDir)],
+              silenceDeprecations: ['import'],
+            },
+          },
+        }
       ]
     }, {
       test: /\.(woff(2)?|ttf|eot)$/,

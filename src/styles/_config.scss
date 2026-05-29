@@ -1,0 +1,23 @@
+// --------------------------------------------------------------------------
+// Config
+// --------------------------------------------------------------------------
+// Forwards all tools and settings so partials can access everything with a
+// single `@use '../config' as *` at the top of each file.
+// --------------------------------------------------------------------------
+
+// Tools
+@forward 'tools/tools.breakpoints';
+@forward 'tools/tools.colors';
+@forward 'tools/tools.font-size';
+@forward 'tools/tools.headings';
+@forward 'tools/tools.links';
+@forward 'tools/tools.responsive-typography';
+@forward 'tools/tools.rhythm';
+
+// Settings
+@forward 'settings/settings.breakpoints';
+@forward 'settings/settings.colors';
+@forward 'settings/settings.grid';
+@forward 'settings/settings.page';
+@forward 'settings/settings.typography';
+@forward 'settings/settings.z-indexes';
