@@ -71,18 +71,12 @@
 
 .alert--modal {
 	position: fixed; // Better `relative` with lots of content in alert modal!
-	top: 10%;
-	left: 25%;
+	top: 50%;
+	left: 50%;
 	z-index: $z-index-alert-modal;
 	padding: rhythm(1);
 	width: 50%;
-
-	.csstransforms & {
-		// See http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
+	transform: translate(-50%, -50%);
 
 	// Animation
 	&.js-alert {
