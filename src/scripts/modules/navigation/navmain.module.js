@@ -1,89 +1,90 @@
 /**
  * Navigation module
- * Add simple navigation functionality (open and close) to .js-navMain element
+ * Add accessible navigation toggle to .js-nav-main element
  *
  * Usage:
- * NavMain.init(); // navigation fixed on top of window
+ * NavMain.init();
  */
 
 import transitionEnd from "../../utils/transitionend.util";
 
 var NavMain = (function () {
 
-	/**
-	 * Privates
-	 */
-	var navelements = {
-		banner: document.querySelector('.banner'),
+	var elements = {
 		html: document.querySelector('html'),
-		navEl: document.querySelector('.js-nav-main')
+		navEl: null,
+		toggle: null,
+		closeBtn: null,
 	};
 
-	function handleNavClick(event) {
-		var target = event.target;
-		if((target.classList.contains('js-nav-main')) || (event.keyCode === 27)) {
-			NavMain.closeNav(event);
+	var focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+	function getFocusable() {
+		return Array.from(elements.navEl.querySelectorAll(focusableSelectors));
+	}
+
+	function trapFocus(event) {
+		var focusable = getFocusable();
+		var first = focusable[0];
+		var last = focusable[focusable.length - 1];
+
+		if (event.key === 'Tab') {
+			if (event.shiftKey) {
+				if (document.activeElement === first) {
+					event.preventDefault();
+					last.focus();
+				}
+			} else {
+				if (document.activeElement === last) {
+					event.preventDefault();
+					first.focus();
+				}
+			}
+		}
+
+		if (event.key === 'Escape') {
+			closeNav();
 		}
 	}
 
-	function setNavHandlers() {
-		// var navMainEl =  document.querySelector('.js-navMain');
-		// navMainEl.addEventListener('click', handleNavClick, false); // Only do this if navheight != windowheight
-		document.addEventListener('keyup', handleNavClick, false);
+	function openNav() {
+		elements.html.classList.add('is-open-main-nav');
+		elements.toggle.setAttribute('aria-expanded', 'true');
+		document.addEventListener('keydown', trapFocus, false);
+
+		var focusable = getFocusable();
+		if (focusable.length) focusable[0].focus();
 	}
 
-	function unsetNavHandlers() {
-		// var navMainEl =  document.querySelector('.js-navMain');
-		// navMainEl.removeEventListener('click', handleNavClick, false); // Only do this if navheight != windowheight
-		document.removeEventListener('keyup', handleNavClick, false);
-	}
-
-	function openNav(event) {
-		if(typeof event !== 'undefined'){
-			event.preventDefault();
-		}
-		navelements.html.classList.add('is-open-main-nav');
-		setNavHandlers(true);
-	}
-
-	function closeNav(event) {
-		if(typeof event !== 'undefined'){
-			event.preventDefault();
-		}
-
-		navelements.navEl.addEventListener(transitionEnd, function endTransitionNavClose(){
-			navelements.html.classList.remove('is-closing-main-nav');
-			navelements.html.classList.remove('is-open-main-nav');
+	function closeNav() {
+		elements.navEl.addEventListener(transitionEnd, function endTransitionNavClose() {
+			elements.html.classList.remove('is-closing-main-nav');
+			elements.html.classList.remove('is-open-main-nav');
 			this.removeEventListener(transitionEnd, endTransitionNavClose, false);
-		},false);
+		}, false);
 
-		navelements.html.classList.add('is-closing-main-nav');
-
-		unsetNavHandlers();
+		elements.html.classList.add('is-closing-main-nav');
+		elements.toggle.setAttribute('aria-expanded', 'false');
+		document.removeEventListener('keydown', trapFocus, false);
+		elements.toggle.focus();
 	}
 
 	function init() {
-		var navMainShow = document.querySelector('.js-nav-main-show');
-		var navMainHide = document.querySelector('.js-nav-main-hide');
+		elements.toggle  = document.querySelector('.js-nav-main-toggle');
+		elements.closeBtn = document.querySelector('.js-nav-main-close');
+		elements.navEl   = document.querySelector('.js-nav-main');
 
-		navelements.navEl = document.querySelector('.js-nav-main');
+		if (!elements.navEl || !elements.toggle) return;
 
-		// Check if nav-main, and nav-main-show DOM navelements exist
-		if (typeof(navelements.navEl) !== 'undefined' && navelements.navEl !== null && typeof(navMainShow) !== 'undefined' && navMainShow !== null) {
-			// Set the event listeners
-			navMainShow.addEventListener('click', openNav, false);
-			navMainHide.addEventListener('click', closeNav, false);
-		}
+		elements.toggle.addEventListener('click', openNav, false);
+		if (elements.closeBtn) elements.closeBtn.addEventListener('click', closeNav, false);
 	}
 
-	/**
-	 * Return public methods
-	 */
 	return {
 		openNav: openNav,
 		closeNav: closeNav,
-		init: init
+		init: init,
 	};
-})();
+}());
 
 export default NavMain;
