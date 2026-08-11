@@ -39,23 +39,19 @@ Thumbs.db
 
 
 # ----------------------------------------------------------------------
-# Ignore grunt workflow folders/files
+# Ignore dependency workflow folders/files
 # ----------------------------------------------------------------------
 
 # Node Modules
 node_modules
 npm-debug.log
 
-# Styles
-assets/stylesheets/dev/*.css
+# ----------------------------------------------------------------------
+# Ignore keys and private stuff
+# ----------------------------------------------------------------------
 
-# Scripts
-assets/javascript/dev/*.js
-
-# Grunticon
-assets/stylesheets/scss/grunticon/preview.html
-assets/stylesheets/scss/grunticon/grunticon.loader.txt
-
+deploy_key
+deploy_key.pub
 
 # ----------------------------------------------------------------------
 # Ignore project folders/files
@@ -64,24 +60,20 @@ assets/stylesheets/scss/grunticon/grunticon.loader.txt
 #temp/**/*
 #design/**/*
 
+# ----------------------------------------------------------------------
+# Ignore local claude settings
+# ----------------------------------------------------------------------
+
+.claude/settings.local.json
 
 # ----------------------------------------------------------------------
 # Ignore Kirby CMS folders/files
 # ----------------------------------------------------------------------
 
-site/cache
-
-site/config/config.*.xip.io.php
-
+#site/cache
+#site/config/config.*.xip.io.php
 #kirby
 #panel
 #site/panel
-
-thumbs
-
-
-# ----------------------------------------------------------------------
-# Ignore content folder (separate repository and/or submodule)
-# ----------------------------------------------------------------------
-
-# content
+#thumbs
+#content
