@@ -35,5 +35,8 @@
   "dependencies": {
     "domready": "^1.0.8",
     "fontfaceobserver": "^2.1.0"
+  },
+  "resolutions": {
+	"node-notifier": "^10.0.1"
   }
 }
