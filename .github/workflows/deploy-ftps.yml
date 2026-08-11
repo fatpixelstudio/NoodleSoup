@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------------------
+# Deploy via FTPS (voor hosts zonder SSH-toegang)
+#
+# Deze workflow doet NIKS totdat je:
+#   1. Repo-secrets instelt:   FTP_HOST, FTP_USER, FTP_PASSWORD
+#   2. Repo-variable instelt:  DEPLOY_PATH  (theme-pad op de server, eindig op /)
+#   3. Een production-branch aanmaakt en pusht
+#
+# Zolang er geen production-branch is, triggert 'ie nooit.
+# Zolang de secrets ontbreken, slaat de guard-stap de deploy netjes over.
+#
+# Gebruik OF deze variant OF de rsync/SSH-variant per project — niet beide.
+# ---------------------------------------------------------------------------
+
+name: Deploy to production (FTPS)
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check of deploy-secrets bestaan
+        run: |
+          if [ -z "${{ secrets.FTP_HOST }}" ]; then
+            echo "::notice::Geen FTP_HOST secret ingesteld — deploy overgeslagen. Stel de secrets in en maak een production-branch aan om te activeren."
+            echo "SKIP_DEPLOY=true" >> "$GITHUB_ENV"
+          fi
+
+      - name: Checkout
+        if: env.SKIP_DEPLOY != 'true'
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTPS
+        if: env.SKIP_DEPLOY != 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          protocol: ftps
+          server: ${{ secrets.FTP_HOST }}
+          port: 21
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ vars.DEPLOY_PATH || '/httpdocs/wp-content/themes/CHANGEME/' }}
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/.DS_Store
+            **/.claude/**
+            src/**
+            src/
+            design/**
+            design/
+            bin/**
+            bin/
+            README.md
+            LICENSE
+            .editorconfig
+            .eslintrc
+            .browserslistrc
+            .gitattributes
+            package.json
+            yarn.lock
+            postcss.config.js
+            svgo.config.js
+            webpack.common.js
+            webpack.dev.js
+            webpack.prod.js

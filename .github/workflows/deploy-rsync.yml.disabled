@@ -1,0 +1,75 @@
+# ---------------------------------------------------------------------------
+# Deploy via rsync over SSH (voor hosts MET SSH-toegang — de robuustere optie)
+#
+# Dit bestand eindigt bewust op .disabled zodat GitHub het NIET oppakt.
+# Kies per project: gebruik OF deze rsync-variant OF de FTPS-variant.
+#
+# Om deze variant te ACTIVEREN:
+#   1. Hernoem dit bestand naar  deploy-rsync.yml  (haal .disabled weg)
+#   2. Verwijder of hernoem  deploy-ftps.yml  zodat je niet twee deploys hebt
+#   3. Genereer een SSH-keypair:
+#        ssh-keygen -t ed25519 -C "github-deploy" -f ./deploy_key
+#   4. Zet de PUBLIEKE key (deploy_key.pub) in ~/.ssh/authorized_keys op de server
+#   5. Zet de PRIVATE key (deploy_key) als repo-secret:  DEPLOY_KEY
+#   6. Zet repo-variables:  DEPLOY_HOST, DEPLOY_USER, DEPLOY_PATH  (pad eindigt op /)
+#   7. Maak een production-branch aan en push
+#
+# LET OP: --delete-after maakt de server een exacte spiegel van je repo.
+# Alles op de server dat niet in de repo (en niet excluded) is, wordt verwijderd.
+# Voor een theme-map is dat meestal precies wat je wil, maar wees je ervan bewust.
+# ---------------------------------------------------------------------------
+
+name: Deploy to production (rsync/SSH)
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check of deploy-key bestaat
+        run: |
+          if [ -z "${{ secrets.DEPLOY_KEY }}" ]; then
+            echo "::notice::Geen DEPLOY_KEY secret ingesteld — deploy overgeslagen. Stel de key + variables in en maak een production-branch aan om te activeren."
+            echo "SKIP_DEPLOY=true" >> "$GITHUB_ENV"
+          fi
+
+      - name: Checkout
+        if: env.SKIP_DEPLOY != 'true'
+        uses: actions/checkout@v4
+
+      - name: Sync files via rsync/SSH
+        if: env.SKIP_DEPLOY != 'true'
+        uses: burnett01/rsync-deployments@v9
+        with:
+          remote_host: ${{ vars.DEPLOY_HOST }}
+          remote_user: ${{ vars.DEPLOY_USER }}
+          remote_path: ${{ vars.DEPLOY_PATH || '/httpdocs/wp-content/themes/CHANGEME/' }}
+          remote_key: ${{ secrets.DEPLOY_KEY }}
+          switches: >-
+            --archive --verbose --compress --human-readable --progress --delete-after
+            --exclude=.git*
+            --exclude=.git/
+            --exclude=.github/
+            --exclude=node_modules/
+            --exclude=.DS_Store
+            --exclude=.claude/
+            --exclude=src/
+            --exclude=design/
+            --exclude=bin/
+            --exclude=README.md
+            --exclude=LICENSE
+            --exclude=.editorconfig
+            --exclude=.eslintrc
+            --exclude=.browserslistrc
+            --exclude=.gitattributes
+            --exclude=package.json
+            --exclude=yarn.lock
+            --exclude=postcss.config.js
+            --exclude=svgo.config.js
+            --exclude=webpack.common.js
+            --exclude=webpack.dev.js
+            --exclude=webpack.prod.js

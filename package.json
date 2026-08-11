@@ -11,7 +11,8 @@
     "start": "run-p webpack:watch svg:watch",
     "webpack:watch": "webpack --config=webpack.dev.js --watch",
     "svg": "svgo -f design/assets/svg -o assets/images/svg",
-    "svg:watch": "yarn svg; chokidar 'design/assets/svg/**/*.svg' -c 'yarn svg'"
+    "svg:watch": "yarn svg; chokidar 'design/assets/svg/**/*.svg' -c 'yarn svg'",
+	"deploy": "./bin/deploy.sh"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
