@@ -2,7 +2,6 @@ const path = require('path');
 const __rootDir = __dirname;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier')
-var webpack = require('webpack');
 
 module.exports = {
   // stats : {
@@ -45,11 +44,9 @@ module.exports = {
       }
     }, {
       test: /\.(png|jpg|jpeg)$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          name: 'images/[name].[ext]'
-        }
+      type: 'asset/resource',
+      generator: {
+        filename: 'images/[name][ext]',
       }
     }]
   },
@@ -57,10 +54,6 @@ module.exports = {
     new WebpackNotifierPlugin({
       alwaysNotify: true,
       emoji: true
-    }),
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery'
     })
   ],
   output: {
