@@ -1,7 +1,7 @@
 const path = require('path');
 const __rootDir = __dirname;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const WebpackNotifierPlugin = require('webpack-notifier')
+const MacNotifierPlugin = require('./webpack/mac-notifier-plugin')
 
 module.exports = {
   // stats : {
@@ -51,9 +51,9 @@ module.exports = {
     }]
   },
   plugins: [
-    new WebpackNotifierPlugin({
+    new MacNotifierPlugin({
+      sound: false,
       alwaysNotify: true,
-      emoji: true
     })
   ],
   output: {
